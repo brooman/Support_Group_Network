@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
-import Config from '../../config';
+import Config from '../../../config';
 
 const linkStyle = {
   marginRight: 15,
@@ -50,29 +50,7 @@ class Menu extends Component {
     });
 
     return (
-      <div>
-        <Link href="/">
-          <a style={linkStyle}>Home</a>
-        </Link>
-        {menuItems}
-
-        {token ? (
-          <button
-            type="button"
-            className="pointer black"
-            onClick={() => {
-              localStorage.removeItem(Config.AUTH_TOKEN);
-              Router.push('/login');
-            }}
-          >
-            Logout {username}
-          </button>
-        ) : (
-          <Link href="/login">
-            <a style={linkStyle}>Login</a>
-          </Link>
-        )}
-      </div>
+      <div/>
     );
   }
 }
