@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@wordpress/element": "^2.3.0",
     "autoprefixer": "9.4.7",
     "axios": "^0.18.0",
     "express": "^4.16.4",
