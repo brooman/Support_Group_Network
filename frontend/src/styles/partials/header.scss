@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 70px;
+  background-color: $themeColor-White;
+  padding: 0 10vw;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem;
+    
+    .brandlogo {
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navitem {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    text-decoration: none;
+
+    span {
+      font-size: $font-md;
+      line-height: $font-md;
+      color: $themeColor-Black;
+    }
+
+    &:hover {
+      background-color: $themeColor-LightDark;
+
+      span {
+        color: $themeColor-White;
+      }
+    }
+  }
+}
