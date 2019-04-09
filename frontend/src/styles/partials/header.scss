@@ -1,10 +1,10 @@
 .header {
   display: flex;
   justify-content: center;
+  position: fixed;
   width: 100vw;
   height: 70px;
-  background-color: $themeColor-White;
-  padding: 0 10vw;
+  padding: 0 5vw;
 
   .brand {
     display: flex;
@@ -17,30 +17,102 @@
       height: 100%;
     }
   }
+}
 
-  .navigation {
-    display: flex;
-    align-items: center;
+.hamburger {
+  width: auto;
+  padding: 1rem;
+  display: none;
+}
+
+.navitems {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navitem {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+  text-decoration: none;
+
+  span {
+    font-size: $font-md;
+    line-height: $font-md;
+    color: $themeColor-Black;
   }
-  
-  .navitem {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 1rem;
-    text-decoration: none;
+
+  &:hover {
+    background-color: $themeColor-LightDark !important;
 
     span {
-      font-size: $font-md;
-      line-height: $font-md;
-      color: $themeColor-Black;
+      color: $themeColor-White;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .header {
+    padding: 5px 5vw;
+    justify-content: space-between;
+
+    .navigation {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      margin-top: 70px;
+      background-color: $themeColor-White;
     }
 
-    &:hover {
-      background-color: $themeColor-LightDark;
+    .navitems {
+      flex-direction: column;
+      align-items: flex-end;
+    }
 
-      span {
-        color: $themeColor-White;
+    .navigation.open {
+      width: 100%;
+      transition: width 0.3s; 
+
+      .navitem {
+        display: block;
+        height: auto;
+        width: 60vw;
+        margin: 12px 16px;
+      }
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .navitem {
+      display: none;
+
+      &:nth-child(1){
+        background-color: $themeColor-LightGrey;
+      }
+      &:nth-child(2){
+        background-color: $themeColor-Yellow;
+      }
+      &:nth-child(3){
+        background-color: $themeColor-Red;
+      }
+      &:nth-child(4){
+        background-color: $themeColor-Green;
+      }
+      &:nth-child(5){
+        background-color: $themeColor-Blue;
+      }
+      &:nth-child(6){
+        background-color: $themeColor-Dark;
+        
+        span {
+          color: $themeColor-White;
+        }
       }
     }
   }

@@ -1,28 +1,55 @@
 import React from 'react';
+import Icon from '../Icon'
 
-const Header = (props) => {
-  const {brand, navitems} = props;
+class Header extends React.Component {
 
-  return (
-    <header className="header">
-      <div className="brand" href="/">
-        <img className="brandlogo" src={brand.logo} alt={brand.name}/>
-      </div>
-      <nav className="navigation">
-        {navitems.map((item, index) => {
+  constructor(props)
+  {
+    super(props)
+  }
 
-          return (
-            <a href={item.link} className="navitem" key={index}>
-              <span>
-                {item.name}
-              </span>
-            </a>
-          )
-          
-        })}
-      </nav>
-    </header>
-  );
+  state = {
+    navigationOpen: false
+  }
+
+  toggleMenu = () => {
+    this.setState({
+      navigationOpen: !this.state.navigationOpen
+    })
+  }
+
+  render(){
+    const {brand, navitems} = this.props
+    const navClasses = this.state.navigationOpen ? "navigation open" : "navigation"
+
+    return (
+      <header className="header">
+        <div className="brand" href="/">
+          <img className="brandlogo" src={brand.logo} alt={brand.name}/>
+        </div>
+
+        <div className={navClasses}>
+          <nav className="navitems">
+            {navitems.map((item, index) => {
+
+              return (
+                <a href={item.link} className="navitem" key={index}>
+                  <span>
+                    {item.name}
+                  </span>
+                </a>
+              )
+              
+            })}
+          </nav>
+        </div>
+
+        <div className="hamburger">
+          <Icon icon="menu" onClick={this.toggleMenu} />
+        </div>
+      </header>
+      );
+  }
 };
 
 export default Header;
