@@ -6,6 +6,7 @@
   height: 70px;
   padding: 0 5vw;
   background-color: $themeColor-White;
+  z-index: 9999;
 
   .brand {
     display: flex;
