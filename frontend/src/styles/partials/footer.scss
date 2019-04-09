@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  background-color: $themeColor-Dark;
+  color: $themeColor-White;
+
+  .sections {
+    padding: 2rem 5rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    
+    .section {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-size: $font-lg;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      .link {
+        color: $themeColor-White;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .bottom {
+    width: 100%;
+    text-align: center;
+    color: $themeColor-White;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .sections {
+    flex-direction: column;
+
+    .section .title, .section .link {
+      text-align: center;
+    }
+  }
+}

@@ -12,6 +12,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.content {
+  min-height: 100vh;
+}
+
 .icon {
   height: 100%;
   border: 0;
@@ -25,3 +29,4 @@ body {
 }
 
 @import 'partials/header';
+@import 'partials/footer';
