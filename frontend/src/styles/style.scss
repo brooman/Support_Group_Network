@@ -16,6 +16,11 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  padding: 1rem;
+  background-color: $themeColor-LightGrey;
+}
+
 .icon {
   height: 100%;
   border: 0;
@@ -28,5 +33,28 @@ body {
   }
 }
 
+.heading {
+  color: $themeColor-White;
+  background-color: $themeColor-Dark;
+  padding: 0.5rem 1rem;
+}
+.heading.yellow {
+  color: $themeColor-Black;
+  background-color: $themeColor-Yellow;
+}
+.heading.red {
+  color: $themeColor-Black;
+  background-color: $themeColor-Red;
+}
+.heading.blue {
+  color: $themeColor-Black;
+  background-color: $themeColor-Blue;
+}
+.heading.green {
+  color: $themeColor-Black;
+  background-color: $themeColor-Green;
+}
+
 @import 'partials/header';
 @import 'partials/footer';
+@import 'partials/hero';

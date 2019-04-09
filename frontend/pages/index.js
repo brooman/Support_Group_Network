@@ -3,6 +3,8 @@ import Head from '../src/HtmlHead'
 import Header from '../src/components/Header'
 import Footer from '../src/components/Footer'
 import Content from '../src/components/Content'
+import Hero from '../src/components/Hero'
+
 class App extends Component {
   state = {
     header: {
@@ -111,6 +113,7 @@ class App extends Component {
       <>
         <Head/>
         <Header brand={header.brand} navitems={header.navitems}/>
+        <Hero />
         <Content />
         <Footer information={footer.information} sections={footer.sections}></Footer>
       </>
