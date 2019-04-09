@@ -20,6 +20,11 @@
   }
 }
 
+/* Push all content down by Header height */
+.header-offset {
+  height: 70px;
+}
+
 .hamburger {
   width: auto;
   padding: 1rem;
