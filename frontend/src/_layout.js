@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
-import Head from '../src/HtmlHead'
-import Header from '../src/components/Header'
-import Footer from '../src/components/Footer'
-import Content from '../src/components/Content'
-import Hero from '../src/components/Hero'
+import Head from 'next/head';
+import stylesheet from './styles/style.scss';
+
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Content from './components/Content'
+import Hero from './components/Hero'
+
+const HtmlHead = () => {
+  return (<Head>
+    <style
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: stylesheet }}
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charSet="utf-8" />
+    <title>Support Group Network</title>
+  </Head>)
+}
 
 
 class Layout extends Component {
@@ -117,7 +131,7 @@ class Layout extends Component {
     const { children } = this.props
     return (
       <>
-        <Head/>
+        <HtmlHead/>
         <Header brand={header.brand} navitems={header.navitems}/>
         <Hero />
         <Content>
