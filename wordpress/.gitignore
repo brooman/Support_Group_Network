@@ -3,6 +3,7 @@
 /wp-content/index.php
 /wp-content/languages/
 /wp-content/plugins/
+!/wp-content/plugins/custom-guteberg-blocks/*
 /wp-content/themes/index.php
 /wp-content/uploads/wp-migrate-db/index.php
 /license.txt
@@ -14,5 +15,3 @@
 /wp-content/index.php
 /wp-content/debug.log
 /wp-content/uploads/**
-
-!/wp-content/plugins/custom-gutenberg-blocks/*
