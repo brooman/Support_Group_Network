@@ -30,3 +30,36 @@ require_once 'inc/acf-options.php';
 
 // Add GraphQL resolvers.
 require_once 'inc/graphql/resolvers.php';
+
+function support_group_network_color_palette() {
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Yellow', '@@textdomain' ),
+				'slug' => 'yellow',
+				'color' => '#FFFB56',
+			),
+			array(
+				'name'  => esc_html__( 'Red', '@@textdomain' ),
+				'slug' => 'red',
+				'color' => '#FF6356',
+			),
+			array(
+				'name'  => esc_html__( 'Green', '@@textdomain' ),
+				'slug' => 'green',
+				'color' => '#69D88A',
+			),
+			array(
+				'name'  => esc_html__( 'Blue', '@@textdomain' ),
+				'slug' => 'blue',
+				'color' => '#57DEF4',
+			),
+			array(
+				'name'  => esc_html__( 'Dark', '@@textdomain' ),
+				'slug' => 'dark',
+				'color' => '#363537',
+			)
+		)
+	);
+}
+add_action( 'after_setup_theme', 'support_group_network_color_palette' );
