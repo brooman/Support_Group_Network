@@ -3,6 +3,7 @@ import Head from '../src/HtmlHead'
 import Header from '../src/components/Header'
 import Footer from '../src/components/Footer'
 import Content from '../src/components/Content'
+import Hero from '../src/components/Hero'
 
 
 class Layout extends Component {
@@ -118,6 +119,7 @@ class Layout extends Component {
       <>
         <Head/>
         <Header brand={header.brand} navitems={header.navitems}/>
+        <Hero />
         <Content>
           {children}
         </Content>
