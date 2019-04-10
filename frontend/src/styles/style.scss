@@ -1,6 +1,5 @@
 @import 'theme-colors';
-@import 'font-size';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import 'theme-font';
 
 * {
   box-sizing: border-box;
@@ -9,25 +8,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font-main;
 }
 
 .content {
   min-height: 100vh;
   padding: 0 5vw;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
-  padding: 1rem;
-  margin: 4rem 0;
-  background-color: $themeColor-LightGrey;
-
-  @media screen and (max-width: 768px){
-    grid-template-columns: 1fr;
-  }
 }
 
 .icon {
@@ -49,34 +35,5 @@ body {
   padding: 0.5rem 3rem 0.5rem 1rem;
 }
 
-/* Colors */
-.yellow {
-  color: $themeColor-Black;
-  background-color: $themeColor-Yellow;
-}
-
-.red {
-  color: $themeColor-Black;
-  background-color: $themeColor-Red;
-}
-
-.blue {
-  color: $themeColor-Black;
-  background-color: $themeColor-Blue;
-}
-
-.green {
-  color: $themeColor-Black;
-  background-color: $themeColor-Green;
-}
-
-.lightdark {
-  color: $themeColor-White;
-  background-color: $themeColor-LightDark;
-}
-
-@import 'partials/header';
-@import 'partials/footer';
-@import 'partials/hero';
-@import 'partials/card';
-@import 'partials/textbox';
+@import 'partials/_partials';
+@import 'layout/_layout';
