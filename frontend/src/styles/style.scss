@@ -14,11 +14,20 @@ body {
 
 .content {
   min-height: 100vh;
+  padding: 0 5vw;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
   padding: 1rem;
+  margin: 4rem 0;
   background-color: $themeColor-LightGrey;
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+  }
 }
 
 .icon {
@@ -36,25 +45,37 @@ body {
 .heading {
   color: $themeColor-White;
   background-color: $themeColor-Dark;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem 0.5rem 1rem;
 }
-.heading.yellow {
+
+/* Colors */
+.yellow {
   color: $themeColor-Black;
   background-color: $themeColor-Yellow;
 }
-.heading.red {
+
+.red {
   color: $themeColor-Black;
   background-color: $themeColor-Red;
 }
-.heading.blue {
+
+.blue {
   color: $themeColor-Black;
   background-color: $themeColor-Blue;
 }
-.heading.green {
+
+.green {
   color: $themeColor-Black;
   background-color: $themeColor-Green;
+}
+
+.lightdark {
+  color: $themeColor-White;
+  background-color: $themeColor-LightDark;
 }
 
 @import 'partials/header';
 @import 'partials/footer';
 @import 'partials/hero';
+@import 'partials/card';
+@import 'partials/textbox';
