@@ -20,8 +20,8 @@ const Footer = props => {
         })}
       </div>  
       <div className="bottom">
-        {information.map(item => {
-          return <p>{item}</p>;
+        {information.map((item, index) => {
+          return <p key={index}>{item}</p>;
         })}
       </div>
         
