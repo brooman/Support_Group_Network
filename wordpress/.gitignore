@@ -14,3 +14,5 @@
 /wp-content/index.php
 /wp-content/debug.log
 /wp-content/uploads/**
+
+!/wp-content/plugins/custom-gutenberg-blocks/*
