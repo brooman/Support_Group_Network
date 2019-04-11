@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextBox = props => {
-  const {title, content, color} = props
+  const {title, content, color, isWide, isLarge, link} = props
 
   return (
-    <div className={`textbox ${color}`}>
-      <h3 className="title">{title}</h3>
+    <div className={`textbox ${color} ${isWide ? 'wide' : ''} ${isLarge ? 'large' : ''}`}>
+      <h3 className="title"><span>{title}</span></h3>
       <p className="text">{content}</p>
-      {/*link.text.length > 0 && <a className="link" href={link.link}>{link.text}</a>*/}
+      {link && <a className="link" href={link.url}>{link.text}</a>}
     </div>
   );
 };
