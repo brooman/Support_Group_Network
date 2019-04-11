@@ -1,7 +1,7 @@
 .textbox {
   padding: 1rem;
   width: 100%;
-  
+
   .title {
     margin: 0 0 1rem;
     
@@ -10,18 +10,22 @@
       border-bottom: 1px solid $themeColor-Black;
     }
   }
-
+  
   .text {
     padding: 1rem 0;
     margin: 0 0 1rem;
-    font-family: $font-main;
+    font-family: $font-alt;
     font-size: $font-lg;
-    font-weight: 900;
 
     @media screen and (max-width: 768px){
       font-size: $font-sm;
     }
   }
+}
+
+/* Fix for lightdark cards */
+.textbox.lightdark > .title > span {
+  border-bottom: 1px solid $themeColor-White;
 }
 
 .textbox.large {
