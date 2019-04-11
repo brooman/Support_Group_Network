@@ -35,5 +35,12 @@ body {
   padding: 0.5rem 3rem 0.5rem 1rem;
 }
 
+.text-lg {
+  font-size: $font-lg;
+  color: $themeColor-White;
+  background-color: $themeColor-Dark;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+}
+
 @import 'partials/_partials';
 @import 'layout/_layout';
