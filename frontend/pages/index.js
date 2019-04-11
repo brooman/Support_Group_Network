@@ -4,6 +4,7 @@ import Container from '../src/components/Container';
 import Card from '../src/components/Card'
 import BoxContainer from '../src/components/BoxContainer';
 import TextBox from '../src/components/TextBox'
+import Divider from '../src/components/Divider';
 
 class Index extends Component {
   render() {
@@ -19,6 +20,10 @@ class Index extends Component {
           </BoxContainer>
           <Card image="/static/images/card.png" title="Really looooooooooong" content="Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities"/>
         </Container>
+
+        <Divider>
+          <TextBox title="Test title" content="Test Content"></TextBox>
+        </Divider>
 
         <Container>
           <BoxContainer>
