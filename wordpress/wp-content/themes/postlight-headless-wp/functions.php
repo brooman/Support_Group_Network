@@ -63,3 +63,16 @@ function support_group_network_color_palette() {
 	);
 }
 add_action( 'after_setup_theme', 'support_group_network_color_palette' );
+
+function sgn_block_category( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'sgn-blocks',
+				'title' => __( 'SGN Blocks', 'sgn-blocks' ),
+			),
+		)
+	);
+}
+add_filter( 'block_categories', 'sgn_block_category', 10, 2);
