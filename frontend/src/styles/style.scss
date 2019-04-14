@@ -21,25 +21,11 @@ body {
   border: 0;
   background: transparent;
   cursor: pointer;
-  
-  img {
-    object-fit: contain;
-    height: 100%;
-  }
 }
 
-.heading {
-  font-size: $font-heading;
-  color: $themeColor-White;
-  background-color: $themeColor-Dark;
-  padding: 0.5rem 3rem 0.5rem 1rem;
-}
-
-.text-lg {
-  font-size: $font-lg;
-  color: $themeColor-White;
-  background-color: $themeColor-Dark;
-  padding: 0.5rem 3rem 0.5rem 1rem;
+img {
+  object-fit: contain;
+  height: 100%;
 }
 
 @import 'partials/_partials';

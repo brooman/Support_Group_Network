@@ -7,3 +7,17 @@ $font-sm: 14px;
 $font-md: 20px;
 $font-lg: 24px;
 $font-heading: 32px;
+
+.heading {
+  font-size: $font-heading;
+  color: $themeColor-White;
+  background-color: $themeColor-Dark;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+}
+
+.text-lg {
+  font-size: $font-lg;
+  color: $themeColor-White;
+  background-color: $themeColor-Dark;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+}
