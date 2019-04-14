@@ -1,0 +1,12 @@
+.image {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.image.is-1x1 {
+  padding-top: 100%;
+}
+
+.image.is-3x4 {
+  padding-top: 75%;
+}
