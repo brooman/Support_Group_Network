@@ -9,7 +9,7 @@ const Divider = props => {
   })
 
   return (
-    <div class="divider">
+    <div className="divider">
       { content }
     </div>
   );
