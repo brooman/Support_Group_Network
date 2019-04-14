@@ -36,6 +36,11 @@ class Index extends Component {
             <TextBox title="Test title" content="Test Content" color="yellow"></TextBox>
           </BoxContainer>
         </Container>
+
+
+        <Container wide>
+          <Card title="Where we are" content="Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities"></Card>
+        </Container>
       </Layout>
     );
   }
