@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro:900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Sans+Pro:900');
 
 $font-main: 'Open Sans', sans-serif;
 $font-alt: 'Source Sans Pro', sans-serif;
 
-$font-sm: 14px;
+$font-sm: 16px;
 $font-md: 20px;
 $font-lg: 24px;
 $font-heading: 32px;
+
+$font-lh-sm: 24px;
+$font-lh-md: 28px;
+$font-lh-lg: 32px;
+$font-lh-heading: 38px;
 
 .heading {
   font-size: $font-heading;
