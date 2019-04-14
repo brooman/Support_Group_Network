@@ -7,7 +7,7 @@ const Image = props => {
   const aspectRatio = size ? `is-${size}` : 'is-1x1'
 
   return (
-    <div className={`image ${aspectRatio}`} style={{backgroundImage: `url('${src}')`}}/>
+      <div className={`image ${aspectRatio}`} style={{backgroundImage: `url('${src}')`}}/>
   );
 };
 
