@@ -13,7 +13,11 @@ body {
 
 .content {
   min-height: 100vh;
-  padding: 0 5vw;
+  padding: 0 10vw;
+
+  @media screen and (max-width: 768px){
+    padding: 0 5vw;
+  }
 }
 
 .icon {
