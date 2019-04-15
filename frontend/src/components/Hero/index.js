@@ -6,8 +6,8 @@ class Hero extends Component {
     return (
       <div className="hero" style={{backgroundImage: `url(/static/images/hero.png)`}}>
         <div className="text">
-          <h1 className="heading">Support Group Network</h1>
-          <h2 className="heading yellow">Working together for a better future</h2>
+          <h1><span className="hero-text">Support Group <br /> Network</span></h1>
+          <h2><span className="text-lg yellow"> Working together for a better future</span></h2>
         </div>
       </div>
     );

@@ -1,10 +1,10 @@
 .header {
   display: flex;
-  justify-content: center;
   position: fixed;
+  justify-content: space-between;
   width: 100vw;
   height: 70px;
-  padding: 0 5vw;
+  padding: 0 10vw;
   background-color: $themeColor-White;
   z-index: 9999;
 

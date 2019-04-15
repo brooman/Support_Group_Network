@@ -7,17 +7,30 @@ $font-sm: 16px;
 $font-md: 20px;
 $font-lg: 24px;
 $font-heading: 32px;
+$font-xl: 64px;
 
 $font-lh-sm: 24px;
 $font-lh-md: 28px;
 $font-lh-lg: 32px;
 $font-lh-heading: 38px;
+$font-lh-xl: 100px;
+
+.hero-text {
+  font-size: $font-xl;
+  line-height: $font-lh-xl;
+  color: $themeColor-White;
+  background-color: $themeColor-Dark;
+  padding: 0 3rem 0 1rem;
+  text-align: center;
+}
 
 .heading {
   font-size: $font-heading;
+  line-height: $font-lh-heading;
   color: $themeColor-White;
   background-color: $themeColor-Dark;
-  padding: 0.5rem 3rem 0.5rem 1rem;
+  padding: 0 3rem 0 1rem;
+  text-align: center;
 }
 
 .text-lg {
@@ -25,4 +38,4 @@ $font-lh-heading: 38px;
   color: $themeColor-White;
   background-color: $themeColor-Dark;
   padding: 0.5rem 3rem 0.5rem 1rem;
-}
+} 
