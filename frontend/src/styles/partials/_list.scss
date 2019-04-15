@@ -6,7 +6,7 @@
     list-style-image: url('/static/icons/arrow.svg');
     padding: 0;
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: $breakpoint){
       display: flex;
       flex-direction: column;
     }
@@ -21,7 +21,7 @@
 }
 
 .list.wide {
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: $breakpoint){
     grid-column-end: span 2;
   }
 

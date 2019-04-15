@@ -15,7 +15,7 @@
     background-color: $themeColor-White;
     padding: 1rem;
     
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: $breakpoint){
       grid-template-columns: 1fr;
     }
   }

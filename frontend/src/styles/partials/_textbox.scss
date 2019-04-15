@@ -18,7 +18,7 @@
     font-family: $font-alt;
     font-size: $font-lg;
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: $breakpoint){
       font-size: $font-sm;
     }
   }
@@ -36,7 +36,7 @@
   .text {
     font-size: $font-heading;
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: $breakpoint){
       font-size: $font-md;
     }
   }

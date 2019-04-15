@@ -1,6 +1,9 @@
 @import 'theme-colors';
 @import 'theme-font';
 
+
+$breakpoint: 1028px;
+
 * {
   box-sizing: border-box;
 }
@@ -15,7 +18,7 @@ body {
   min-height: 100vh;
   padding: 0 10vw;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: $breakpoint){
     padding: 0 5vw;
   }
 }
