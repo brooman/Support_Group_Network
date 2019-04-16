@@ -43,10 +43,28 @@ registerBlockType('sgnblocks/textblock', {
             setAttributes({title});
         }
 
+        // Get value from select > option
+        const onChangeColorOption = value => {
+            // Find some way to update the styling
+            // Maybe change class, maybe something else
+        }
+
         return [
             <InspectorControls>
                 <div style={{padding: '1em 0'}}>
                     Options
+                </div>
+                <div>
+                    <label for="wp-textbox-color-option">Color: </label>
+                    <select
+                    id="wp-textbox-color-option"
+                    onChange={onChangeColorOption}
+                    >
+                        <option value="yellow">yellow</option>
+                        <option value="Red">Red</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                    </select>
                 </div>
             </InspectorControls>,
             
