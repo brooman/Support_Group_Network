@@ -19,12 +19,12 @@ registerBlockType('sgnblocks/textblock', {
         title: {
             type: 'string',
             source: 'text',
-            selector: '.title',
+            selector: 'h2.title > span',
         },
         content: {
             type: 'array',
             source: 'children',
-            selector: '.text-content',
+            selector: '.text',
         },
     },
 
@@ -51,22 +51,23 @@ registerBlockType('sgnblocks/textblock', {
             </InspectorControls>,
             
             <div className={className}>
-                <RichText
-                    tagName="h2"
-                    className="title"
-                    value={title}
-                    onChange={onChangeTitle}
-                    unstableOnSplit={ () => false } 
-                />
+                <h2 className="title">
+                    <RichText
+                        tagName="span"
+                        placeholder="Add your own Title"
+                        value={title}
+                        onChange={onChangeTitle}
+                    />
+                </h2>
 
                 <RichText
                     tagName="p"
-                    className="text-content"
+                    className="text"
+                    placeholder="Add your own content"
                     value={content}
                     onChange={onChangeContent}
                 />
-            </div>
-            ,
+            </div>,
         ];
     },
 
@@ -77,9 +78,13 @@ registerBlockType('sgnblocks/textblock', {
 
         return (
             <div>
-                <h2 className="title">{title}</h2>
+                <h2 className="title">
+                    <span>
+                        {title}
+                    </span>
+                </h2>
 
-                <p className="text-content">{content}</p>
+                <p className="text">{content}</p>
             </div>
         );
     },
