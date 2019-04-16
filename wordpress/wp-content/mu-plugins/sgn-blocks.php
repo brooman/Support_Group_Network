@@ -20,17 +20,17 @@ function sgnblocks_plugin_editor_scripts() {
     // Enqueue block editor JS
     wp_register_script(
         'sgnblocks/editor-scripts',
-        plugins_url( '/assets/dist/build.js', __FILE__ ),
+        plugins_url( '/SGN-Blocks/assets/dist/build.js', __FILE__ ),
         [ 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n' ],
-        filemtime( plugin_dir_path( __FILE__ ) . '/assets/dist/build.js' ) 
+        filemtime( plugin_dir_path( __FILE__ ) . '/SGN-Blocks/assets/dist/build.js' ) 
     );
  
     // Enqueue block editor styles
     wp_register_style(
         'sgnblocks/stylesheets',
-        plugins_url( 'assets/dist/style.css', __FILE__ ),
+        plugins_url( 'SGN-Blocks/assets/dist/style.css', __FILE__ ),
         [ 'wp-edit-blocks' ],
-        filemtime( plugin_dir_path( __FILE__ ) . 'assets/dist/style.css' ) 
+        filemtime( plugin_dir_path( __FILE__ ) . 'SGN-Blocks/assets/dist/style.css' ) 
     );
 
     register_block_type('sgnblocks/block-library', array(
@@ -53,7 +53,7 @@ function sgnblocks_plugin_view_scripts() {
 
     wp_enqueue_script(
 		'sgnblocks/view-scripts',
-		plugins_url( '/assets/dist/build.view.js', __FILE__ ),
+		plugins_url( '/SGN-Blocks/assets/dist/build.view.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element', 'react', 'react-dom' )
     );
 }
