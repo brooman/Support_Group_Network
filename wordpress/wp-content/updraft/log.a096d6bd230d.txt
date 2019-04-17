@@ -1,0 +1,40 @@
+0000.030 () Opened log file at time: Wed, 17 Apr 2019 11:08:48 +0000 on http://localhost:8080
+0000.032 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.12 WP: 5.1.1 PHP: 7.2.16 (apache2handler, Linux d6fd3d32f40e 4.9.87-linuxkit-aufs #1 SMP Wed Mar 14 15:12:16 UTC 2018 x86_64) MySQL: 10.3.13-MariaDB-1:10.3.13+maria~bionic WPLANG: en_US Server: Apache/2.4.25 (Debian) safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 5.9M | 6M) multisite: N openssl: OpenSSL 1.1.0j  20 Nov 2018 mcrypt: N LANG: C ZipArchive::addFile: Y
+0000.033 () Free space on disk containing Updraft's temporary directory: 23654.1 MB
+0000.165 () Restore job started. Entities to restore: db. Restore options: {"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.196 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.206 () Entity: db
+0000.209 () restore_backup(backup_file=backup_2019-04-16-2041_Postlight_Headless_WP_Starter_885ad364b40c-db.gz, type=db, info=a:0:{}, last_one=1)
+0000.213 () Unpacking backup... (backup_2019-04-16-2041_Postlight_Headless_WP_Starter_885ad364b40c-db.gz, 0.1 Mb)
+0000.244 () Database successfully unpacked
+0000.247 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.251 () Using direct MySQL access; value of use_mysqli is: 1
+0000.406 () Tried to raise max_allowed_packet from 16 MB to 32 MB, but failed (Access denied; you need (at least one of) the SUPER privilege(s) for this operation, b:0;)
+0000.406 () Max packet size: 16 MB
+0000.407 () Entering maintenance mode
+0000.407 () Enabling Maintenance mode&#8230;
+0000.412 () Backup of: http://localhost:8080
+0000.415 () Content URL: http://localhost:8080/wp-content
+0000.416 () Uploads URL: http://localhost:8080/wp-content/uploads
+0000.417 () Old table prefix: wp_
+0000.418 () Site information: multisite=0
+0000.419 () New table prefix: wp_
+0000.442 () Processing table (InnoDB): wp_options
+0000.855 () Restoring prior UD configuration (table: wp_options; keys: 3)
+0000.893 () Processing table (InnoDB): wp_users
+0001.005 () Processing table (InnoDB): wp_usermeta
+0001.121 () Processing table (InnoDB): wp_commentmeta
+0001.266 () Processing table (InnoDB): wp_comments
+0001.412 () Processing table (InnoDB): wp_links
+0001.528 () Processing table (InnoDB): wp_postmeta
+0001.657 () Processing table (InnoDB): wp_posts
+0001.781 () Processing table (InnoDB): wp_term_relationships
+0001.874 () Processing table (InnoDB): wp_term_taxonomy
+0002.008 () Processing table (InnoDB): wp_termmeta
+0002.118 () Processing table (InnoDB): wp_terms
+0002.246 () Unlocking database and leaving maintenance mode
+0002.248 () Disabling Maintenance mode&#8230;
+0002.251 () Finished: lines processed: 41 in 2.00 seconds
+0002.255 () Cleaning up rubbish...
+0002.485 () Restore successful!
+0002.486 () Restore successful
