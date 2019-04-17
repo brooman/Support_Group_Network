@@ -86,6 +86,74 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/src/box-container/box-container.editor.scss":
+/*!************************************************************!*\
+  !*** ./assets/src/box-container/box-container.editor.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./box-container.editor.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/box-container/box-container.editor.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./assets/src/box-container/box-container.editor.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/box-container/box-container.js":
+/*!***************************************************!*\
+  !*** ./assets/src/box-container/box-container.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _box_container_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./box-container.view.scss */ \"./assets/src/box-container/box-container.view.scss\");\n/* harmony import */ var _box_container_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_box_container_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _box_container_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./box-container.editor.scss */ \"./assets/src/box-container/box-container.editor.scss\");\n/* harmony import */ var _box_container_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_box_container_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar registerBlockType = wp.blocks.registerBlockType;\nvar _wp$editor = wp.editor,\n    InspectorControls = _wp$editor.InspectorControls,\n    RichText = _wp$editor.RichText,\n    InnerBlocks = _wp$editor.InnerBlocks;\nregisterBlockType('sgnblocks/box-container', {\n  title: 'Text Block Container',\n  icon: 'screenoptions',\n  category: 'sgn-blocks',\n  supports: {\n    align: true\n  },\n  attributes: {\n    align: true\n  },\n  edit: function edit(props) {\n    var className = props.className,\n        children = props.children,\n        setAttributes = props.setAttributes; // const {  } = props.attributes;\n\n    var getLayout = function getLayout(count) {\n      switch (count) {\n        case 1:\n          return [{\n            isLarge: true\n          }];\n\n        case 2:\n          return [{\n            isWide: true\n          }, {\n            isLarge: true\n          }];\n\n        case 3:\n          return [{}, {}, {\n            isLarge: true\n          }];\n\n        case 4:\n          return [{\n            isWide: true\n          }, {}, {}, {\n            isWide: true\n          }];\n\n        case 5:\n          return [{}, {}, {\n            isWide: true\n          }, {}, {}];\n\n        default:\n          return [{}, {}, {}, {}, {}, {}];\n      }\n    };\n\n    var count = React.Children.count(children);\n    var layout = getLayout(count);\n    var content = React.Children.map(children, function (child, index) {\n      return React.cloneElement(child, layout[index]);\n    });\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\")), React.createElement(\"div\", {\n      className: className\n    }, React.createElement(InnerBlocks, {\n      allowedBlocks: ['sgnblocks/textblock']\n    }))];\n  },\n  save: function save(props) {\n    // const className = getBlockDefaultClassName('sgnblocks/box-container'); // For use with say, BEM\n    // const {  } = props.attributes;\n    return React.createElement(\"div\", null, React.createElement(InnerBlocks.Content, null));\n  }\n});\n\n//# sourceURL=webpack:///./assets/src/box-container/box-container.js?");
+
+/***/ }),
+
+/***/ "./assets/src/box-container/box-container.view.scss":
+/*!**********************************************************!*\
+  !*** ./assets/src/box-container/box-container.view.scss ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/box-container/box-container.view.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/hero/hero.editor.scss":
+/*!******************************************!*\
+  !*** ./assets/src/hero/hero.editor.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./hero.editor.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/hero/hero.editor.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./assets/src/hero/hero.editor.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/hero/hero.js":
+/*!*********************************!*\
+  !*** ./assets/src/hero/hero.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hero_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hero.view.scss */ \"./assets/src/hero/hero.view.scss\");\n/* harmony import */ var _hero_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hero_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hero_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hero.editor.scss */ \"./assets/src/hero/hero.editor.scss\");\n/* harmony import */ var _hero_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_hero_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar registerBlockType = wp.blocks.registerBlockType;\nvar _wp$editor = wp.editor,\n    InspectorControls = _wp$editor.InspectorControls,\n    RichText = _wp$editor.RichText;\nregisterBlockType('sgnblocks/hero', {\n  title: 'Hero',\n  icon: 'editor-distractionfree',\n  category: 'sgn-blocks',\n  supports: {\n    align: true\n  },\n  attributes: {\n    align: true\n  },\n  edit: function edit(props) {\n    var className = props.className,\n        setAttributes = props.setAttributes; // const {  } = props.attributes;\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\")), React.createElement(\"div\", {\n      className: className\n    }, \"Hero\")];\n  },\n  save: function save(props) {\n    // const className = getBlockDefaultClassName('sgnblocks/hero'); // For use with say, BEM\n    // const {  } = props.attributes;\n    return React.createElement(\"div\", null, \"Hero\");\n  }\n});\n\n//# sourceURL=webpack:///./assets/src/hero/hero.js?");
+
+/***/ }),
+
+/***/ "./assets/src/hero/hero.view.scss":
+/*!****************************************!*\
+  !*** ./assets/src/hero/hero.view.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/hero/hero.view.scss?");
+
+/***/ }),
+
 /***/ "./assets/src/i18n.js":
 /*!****************************!*\
   !*** ./assets/src/i18n.js ***!
@@ -105,7 +173,7 @@ eval("wp.i18n.setLocaleData({\n  \"\": {}\n}, \"sgnblocks\");\n\n//# sourceURL=w
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _i18n_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./i18n.js */ \"./assets/src/i18n.js\");\n/* harmony import */ var _i18n_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_i18n_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _textblock_textblock_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./textblock/textblock.js */ \"./assets/src/textblock/textblock.js\");\n/**\n * Import internationalization\n */\n\n/**\n * Import registerBlockType blocks\n */\n\n\n\n//# sourceURL=webpack:///./assets/src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _i18n_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./i18n.js */ \"./assets/src/i18n.js\");\n/* harmony import */ var _i18n_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_i18n_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _textblock_textblock_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./textblock/textblock.js */ \"./assets/src/textblock/textblock.js\");\n/* harmony import */ var _box_container_box_container_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./box-container/box-container.js */ \"./assets/src/box-container/box-container.js\");\n/* harmony import */ var _hero_hero_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hero/hero.js */ \"./assets/src/hero/hero.js\");\n/**\n * Import internationalization\n */\n\n/**\n * Import registerBlockType blocks\n */\n\n\n\n\n\n//# sourceURL=webpack:///./assets/src/index.js?");
 
 /***/ }),
 
@@ -128,7 +196,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _textblock_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./textblock.view.scss */ \"./assets/src/textblock/textblock.view.scss\");\n/* harmony import */ var _textblock_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_textblock_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _textblock_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./textblock.editor.scss */ \"./assets/src/textblock/textblock.editor.scss\");\n/* harmony import */ var _textblock_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_textblock_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar registerBlockType = wp.blocks.registerBlockType;\nvar _wp$editor = wp.editor,\n    InspectorControls = _wp$editor.InspectorControls,\n    RichText = _wp$editor.RichText;\nregisterBlockType('sgnblocks/textblock', {\n  title: 'Colored Text Block',\n  icon: 'screenoptions',\n  category: 'sgn-blocks',\n  attributes: {\n    title: {\n      type: 'string',\n      source: 'text',\n      selector: '.title'\n    },\n    content: {\n      type: 'array',\n      source: 'children',\n      selector: '.text-content'\n    }\n  },\n  edit: function edit(props) {\n    var _props$attributes = props.attributes,\n        title = _props$attributes.title,\n        content = _props$attributes.content,\n        className = props.className,\n        setAttributes = props.setAttributes;\n\n    var onChangeContent = function onChangeContent(content) {\n      setAttributes({\n        content: content\n      });\n    };\n\n    var onChangeTitle = function onChangeTitle(title) {\n      setAttributes({\n        title: title\n      });\n    };\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\")), React.createElement(\"div\", {\n      className: className\n    }, React.createElement(RichText, {\n      tagName: \"h2\",\n      className: \"title\",\n      value: title,\n      onChange: onChangeTitle,\n      unstableOnSplit: function unstableOnSplit() {\n        return false;\n      }\n    }), React.createElement(RichText, {\n      tagName: \"p\",\n      className: \"text-content\",\n      value: content,\n      onChange: onChangeContent\n    }))];\n  },\n  save: function save(props) {\n    var _props$attributes2 = props.attributes,\n        title = _props$attributes2.title,\n        content = _props$attributes2.content;\n    return React.createElement(\"div\", null, React.createElement(\"h2\", {\n      className: \"title\"\n    }, title), React.createElement(\"p\", {\n      className: \"text-content\"\n    }, content));\n  }\n});\n\n//# sourceURL=webpack:///./assets/src/textblock/textblock.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _textblock_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./textblock.view.scss */ \"./assets/src/textblock/textblock.view.scss\");\n/* harmony import */ var _textblock_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_textblock_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _textblock_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./textblock.editor.scss */ \"./assets/src/textblock/textblock.editor.scss\");\n/* harmony import */ var _textblock_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_textblock_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar registerBlockType = wp.blocks.registerBlockType;\nvar _wp$editor = wp.editor,\n    InspectorControls = _wp$editor.InspectorControls,\n    RichText = _wp$editor.RichText;\nregisterBlockType('sgnblocks/textblock', {\n  title: 'Colored Text Block',\n  icon: 'screenoptions',\n  category: 'sgn-blocks',\n  attributes: {\n    title: {\n      type: 'string',\n      source: 'text',\n      selector: 'h2.title > span'\n    },\n    content: {\n      type: 'array',\n      source: 'children',\n      selector: '.text'\n    }\n  },\n  edit: function edit(props) {\n    var _props$attributes = props.attributes,\n        title = _props$attributes.title,\n        content = _props$attributes.content,\n        className = props.className,\n        setAttributes = props.setAttributes;\n\n    var onChangeContent = function onChangeContent(content) {\n      setAttributes({\n        content: content\n      });\n    };\n\n    var onChangeTitle = function onChangeTitle(title) {\n      setAttributes({\n        title: title\n      });\n    }; // Get value from select > option\n\n\n    var onChangeColorOption = function onChangeColorOption(value) {// Find some way to update the styling\n      // Maybe change class, maybe something else\n    };\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\"), React.createElement(\"div\", null, React.createElement(\"label\", {\n      for: \"wp-textbox-color-option\"\n    }, \"Color: \"), React.createElement(\"select\", {\n      id: \"wp-textbox-color-option\",\n      onChange: onChangeColorOption\n    }, React.createElement(\"option\", {\n      value: \"yellow\"\n    }, \"yellow\"), React.createElement(\"option\", {\n      value: \"Red\"\n    }, \"Red\"), React.createElement(\"option\", {\n      value: \"Green\"\n    }, \"Green\"), React.createElement(\"option\", {\n      value: \"Blue\"\n    }, \"Blue\")))), React.createElement(\"div\", {\n      className: className\n    }, React.createElement(\"h2\", {\n      className: \"title\"\n    }, React.createElement(RichText, {\n      tagName: \"span\",\n      placeholder: \"Add your own Title\",\n      value: title,\n      onChange: onChangeTitle\n    })), React.createElement(RichText, {\n      tagName: \"p\",\n      className: \"text\",\n      placeholder: \"Add your own content\",\n      value: content,\n      onChange: onChangeContent\n    }))];\n  },\n  save: function save(props) {\n    var _props$attributes2 = props.attributes,\n        title = _props$attributes2.title,\n        content = _props$attributes2.content;\n    return React.createElement(\"div\", null, React.createElement(\"h2\", {\n      className: \"title\"\n    }, React.createElement(\"span\", null, title)), React.createElement(\"p\", {\n      className: \"text\"\n    }, content));\n  }\n});\n\n//# sourceURL=webpack:///./assets/src/textblock/textblock.js?");
 
 /***/ }),
 
@@ -140,6 +208,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tex
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/textblock/textblock.view.scss?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/box-container/box-container.editor.scss":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/box-container/box-container.editor.scss ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"/*\\n* For styles only loaded in the editor\\n* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.\\n*/\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./assets/src/box-container/box-container.editor.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/hero/hero.editor.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/hero/hero.editor.scss ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"/*\\n* For styles only loaded in the editor\\n* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.\\n*/\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./assets/src/hero/hero.editor.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 

@@ -1,5 +1,5 @@
-import './box-container.view.scss';
-import './box-container.editor.scss';
+import './hero.view.scss';
+import './hero.editor.scss';
 
 const {
     registerBlockType,
@@ -7,13 +7,12 @@ const {
 
 const { 
     InspectorControls,
-    RichText,
-    InnerBlocks
+    RichText
 } = wp.editor;
 
-registerBlockType('sgnblocks/box-container', {
-    title: 'Text Block Container',
-    icon: 'screenoptions',
+registerBlockType('sgnblocks/hero', {
+    title: 'Hero',
+    icon: 'editor-distractionfree',
     category: 'sgn-blocks',
 
     supports: {
@@ -35,20 +34,18 @@ registerBlockType('sgnblocks/box-container', {
                 </div>
             </InspectorControls>,
             <div className={className}>
-                <InnerBlocks
-                    allowedBlocks={['sgnblocks/textblock']}
-                />
+                Hero
             </div>,
         ];
     },
 
     save(props) {
-        // const className = getBlockDefaultClassName('sgnblocks/box-container'); // For use with say, BEM
+        // const className = getBlockDefaultClassName('sgnblocks/hero'); // For use with say, BEM
         // const {  } = props.attributes;
 
         return (
             <div>
-                <InnerBlocks.Content />
+                Hero
             </div>
         );
     },

@@ -1,0 +1,28 @@
+0000.172 (R) [notice] Looking for db archive: file name: backup_2019-04-16-2041_Postlight_Headless_WP_Starter_885ad364b40c-db.gz
+0000.176 (R) [notice] Archive is expected to be size: 133.8 KB: OK
+0000.197 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.213 (R) [notice] Unpacking backup... (backup_2019-04-16-2041_Postlight_Headless_WP_Starter_885ad364b40c-db.gz, 0.1 Mb)
+0000.247 (R) [notice] Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.408 (R) [notice] Enabling Maintenance mode&#8230;
+0000.412 (R) [notice] Backup of: http://localhost:8080
+0000.415 (R) [notice] Content URL: http://localhost:8080/wp-content
+0000.416 (R) [notice] Uploads URL: http://localhost:8080/wp-content/uploads
+0000.416 (R) [notice] Old table prefix: wp_
+0000.417 (R) [notice] Site information: multisite = 0
+0000.420 (R) [notice] New table prefix: wp_
+0000.442 (R) [notice] Processing table (InnoDB):  wp_options
+0000.894 (R) [notice] Processing table (InnoDB):  wp_users
+0001.006 (R) [notice] Processing table (InnoDB):  wp_usermeta
+0001.122 (R) [notice] Processing table (InnoDB):  wp_commentmeta
+0001.268 (R) [notice] Processing table (InnoDB):  wp_comments
+0001.413 (R) [notice] Processing table (InnoDB):  wp_links
+0001.529 (R) [notice] Processing table (InnoDB):  wp_postmeta
+0001.657 (R) [notice] Processing table (InnoDB):  wp_posts
+0001.781 (R) [notice] Processing table (InnoDB):  wp_term_relationships
+0001.875 (R) [notice] Processing table (InnoDB):  wp_term_taxonomy
+0002.009 (R) [notice] Processing table (InnoDB):  wp_termmeta
+0002.118 (R) [notice] Processing table (InnoDB):  wp_terms
+0002.248 (R) [notice] Disabling Maintenance mode&#8230;
+0002.251 (R) [notice] Finished: lines processed: 41 in 2.00 seconds
+0002.255 (R) [notice] Cleaning up rubbish...
+0002.485 (R) [notice] Restore successful!

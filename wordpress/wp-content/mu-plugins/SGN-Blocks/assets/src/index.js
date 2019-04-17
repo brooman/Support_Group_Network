@@ -8,3 +8,4 @@ import "./i18n.js";
  */
 import "./textblock/textblock.js";
 import "./box-container/box-container.js";
+import "./hero/hero.js";
