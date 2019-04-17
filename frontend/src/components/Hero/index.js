@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Hero extends Component {
-  render() {
+const Hero = (props) =>  {
     return (
       <div className="hero" style={{backgroundImage: `url(/static/images/hero.png)`}}>
         <div className="text">
@@ -11,11 +10,6 @@ class Hero extends Component {
         </div>
       </div>
     );
-  }
 }
-
-Hero.propTypes = {
-
-};
 
 export default Hero;
