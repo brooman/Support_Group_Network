@@ -3,7 +3,6 @@
 .wp-block-sgnblocks-textblock {
     padding: 1rem;
     width: 100%;
-    background-color: #FFFB56 !important;
 
     .title{
         margin: 0 0 1rem;
@@ -25,5 +24,22 @@
                 font-size: 14px; 
             } 
         }
+    }
+
+
+    &.yellow{
+        background-color: #FFFB56;
+    }
+
+    &.red{
+        background-color: #FF6356;
+    }
+
+    &.green{
+        background-color: #69D88A;
+    }
+    
+    &.blue{
+        background-color: #57DEF4;
     }
 }
