@@ -1,37 +1,22 @@
 <?php
-  $_reactSrc = realpath(__DIR__) . "/react-src";
-  $_publicPath = $_reactSrc . "/public";
-  $_postInstallerPath = $_publicPath . "/post_installer.php";
-
-  if (file_exists($_postInstallerPath)) {
-    // read the package.json file
-    $packagePath = $_reactSrc . "/package.json";
-    $json = json_decode(file_get_contents($packagePath), true);
-
-    // set the "homepage" correctly in the JSON
-    // this ensures all WebPack produced links will work
-    $templatePath = get_template_directory_uri();
-    $templatePath = parse_url($templatePath, PHP_URL_PATH);
-    $json["homepage"] = $templatePath;
-    // set browserLaunchTo to the site's root
-    $json["browserLaunchTo"] = site_url();
-
-    // rewrite the package.json file with the new value for "homepage"
-    $fp = fopen($packagePath, "w");
-    fwrite($fp, json_encode($json, JSON_PRETTY_PRINT));
-    fclose($fp);
-
-    // delete the current index.php page (which is this page you are currently reading)
-    unlink($_publicPath . "/index.php");
-    // rename the "post_installer.php" to make it the new index.php file
-    rename($_postInstallerPath, $_publicPath . "/index.php");
-  }
+  $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charSet="utf-8" />
+    <title>Support Group Network</title>
 
-Please restart the Nodejs watcher now...
-
-<script>
-  setTimeout(function() {
-    window.location.replace(window.location);
-  }, 3000);
-</script>
+</head>
+    <body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    
+    </body>
+</html>
