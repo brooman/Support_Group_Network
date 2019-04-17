@@ -8,6 +8,7 @@ import MasonryCard from '../src/components/MasonryCard'
 import Divider from '../src/components/Divider';
 import Image from '../src/components/Image';
 import List from '../src/components/List';
+import Supporters from '../src/components/Supporters';
 
 class Index extends Component {
   render() {
@@ -56,7 +57,12 @@ class Index extends Component {
         <Container>
           <List wide title="List test" items={["Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities", "Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities", "Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities", "Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities", "Strong Women Network (SWN) has as a goal to create a meeting place for asylum seekers, newly arrived and already Sweden- established women in order to promote intercultural dialogue among women from different nationalities"]} /> 
           <TextBox title="Test title" content="Test Content" color="green"></TextBox>
-        </Container> 
+        </Container>
+
+        <Container>
+          <Supporters images={[{name:"123", src:"/static/images/supporter.png"}, {name:"123", src:"/static/images/supporter.png"}, {name:"123", src:"/static/images/supporter.png"}, {name:"123", src:"/static/images/supporter.png"}, {name:"123", src:"/static/images/supporter.png"}]}/>
+        </Container>
+
       </Layout>
     );
   }
