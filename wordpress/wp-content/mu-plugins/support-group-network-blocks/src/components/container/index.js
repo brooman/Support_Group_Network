@@ -6,7 +6,7 @@ registerBlockType( 'cgb/container', {
 
 	title: __( 'Container' ),
 	icon: 'shield',
-	category: 'common',
+	category: 'sgn-blocks',
 
 	edit: function( props ) {
 		const { title, wide } = props;

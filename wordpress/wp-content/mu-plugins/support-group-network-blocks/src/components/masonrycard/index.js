@@ -7,7 +7,7 @@ registerBlockType( 'cgb/masonrycard', {
 
 	title: __( 'MasonryCard' ),
 	icon: 'shield',
-	category: 'common',
+	category: 'sgn-blocks',
 
 	edit: function( props ) {
 		const { children, title, content } = props;

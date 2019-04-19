@@ -7,7 +7,7 @@ registerBlockType( 'cgb/textbox', {
 
 	title: __( 'textbox - CGB Block' ),
 	icon: 'shield',
-	category: 'common',
+	category: 'sgn-blocks',
 
 	edit: function( props ) {
 		const { title, content, color, isWide, isLarge, link } = props;

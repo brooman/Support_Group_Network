@@ -7,7 +7,7 @@ registerBlockType( 'cgb/supporters', {
 
 	title: __( 'Supporters' ),
 	icon: 'shield',
-	category: 'common',
+	category: 'sgn-blocks',
 
 	edit: function( props ) {
 		const { images } = props;

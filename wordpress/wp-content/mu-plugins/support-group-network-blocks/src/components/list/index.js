@@ -7,7 +7,7 @@ registerBlockType( 'cgb/list', {
 
 	title: __( 'List' ),
 	icon: 'shield',
-	category: 'common',
+	category: 'sgn-blocks',
 
 	edit: function( props ) {
 		const { title, items, wide } = props;
