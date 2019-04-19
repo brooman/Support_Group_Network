@@ -1,9 +1,9 @@
 import { CleanFilter } from './CleanFilter';
 
-export class CGBContainer extends CleanFilter {
+export class CGBBoxContainer extends CleanFilter {
     
     constructor() {
-        super( 'cgb-container' );
+        super( 'cgb-boxcontainer' );
     }
     
     hookCallback( attributes, name, innerBlocks ) {
