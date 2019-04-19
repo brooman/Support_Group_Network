@@ -8,6 +8,7 @@
   "scripts": {
     "postinstall": "docker-compose run --rm wp-headless install_wordpress",
     "start": "docker-compose up",
-    "restart_wp": "docker-compose restart wp-headless"
+    "restart_wp": "docker-compose restart wp-headless",
+    "restart_db": "docker-compose restart db-headless"
   }
 }
