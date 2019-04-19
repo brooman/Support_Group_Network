@@ -38,12 +38,18 @@ registerBlockType( 'cgb/block-boxcontainer', {
 
 		return (
 			<div className={ `box-container ${ count === 1 ? 'single' : '' }` }>
-				{ content }
+				<InnerBlocks
+					allowedBlocks={ [ 'sgnblocks/textblock' ] }
+				/>
 			</div>
 		);
 	},
 
 	save: function( ) {
-		return null;
+		return (
+			<div>
+				<InnerBlocks.Content />
+			</div>
+		);
 	},
 } );
