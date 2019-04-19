@@ -1,0 +1,10 @@
+.divider {
+  display: flex;
+  justify-content: flex-end;
+  background-color: $themeColor-LightDark;
+
+  *:first-child {
+    width: unset;
+    min-width: 33.33%;
+  }
+}
