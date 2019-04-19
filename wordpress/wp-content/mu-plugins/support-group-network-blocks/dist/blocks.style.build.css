@@ -239,23 +239,23 @@ img {
     bottom: 20%;
     left: 10%; }
 
-.card {
+.wp-block-cgb-card {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   height: 100%;
   background-color: #fff; }
-  .card .card-content {
+  .wp-block-cgb-card .card-content {
     position: relative;
     -ms-flex: 1 1 auto;
         flex: 1 1 auto;
     padding: 0 1.25rem; }
-    .card .card-content .text {
+    .wp-block-cgb-card .card-content .text {
       font-size: 20px;
       line-height: 28px;
       font-weight: 300; }
-  .card .link {
+  .wp-block-cgb-card .link {
     padding: 0 1.25rem 1.25rem; }
 
 .textbox {
@@ -649,23 +649,23 @@ img {
     bottom: 20%;
     left: 10%; }
 
-.card {
+.wp-block-cgb-card {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   height: 100%;
   background-color: #fff; }
-  .card .card-content {
+  .wp-block-cgb-card .card-content {
     position: relative;
     -ms-flex: 1 1 auto;
         flex: 1 1 auto;
     padding: 0 1.25rem; }
-    .card .card-content .text {
+    .wp-block-cgb-card .card-content .text {
       font-size: 20px;
       line-height: 28px;
       font-weight: 300; }
-  .card .link {
+  .wp-block-cgb-card .link {
     padding: 0 1.25rem 1.25rem; }
 
 .textbox {
