@@ -24,7 +24,7 @@ registerBlockType( 'cgb/boxcontainer', {
 
 	title: __( 'Textbox Container' ),
 	icon: 'shield',
-	category: 'common',
+	category: 'sgn-blocks',
 
 	edit: function( props ) {
 		const { className } = props;
