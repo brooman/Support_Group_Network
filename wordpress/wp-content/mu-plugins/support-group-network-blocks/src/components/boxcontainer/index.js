@@ -22,7 +22,7 @@ const getLayout = ( count ) => {
 
 registerBlockType( 'cgb/boxcontainer', {
 
-	title: __( 'Container' ),
+	title: __( 'Textbox Container' ),
 	icon: 'shield',
 	category: 'common',
 
