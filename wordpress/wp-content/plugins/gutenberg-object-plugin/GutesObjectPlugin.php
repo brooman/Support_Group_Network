@@ -13,11 +13,11 @@
 
 namespace GutesObjectPlugin;
 
-if ( file_exists( __DIR__ . '/gutenberg-object-plugin/vendor/autoload.php' ) ) {
-	require_once 'gutenberg-object-plugin/vendor/autoload.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once 'vendor/autoload.php';
 }
 
-require_once 'gutenberg-object-plugin/src/Helpers.php';
+require_once 'src/Helpers.php';
 
 
 use GutesObjectPlugin\Scripts;

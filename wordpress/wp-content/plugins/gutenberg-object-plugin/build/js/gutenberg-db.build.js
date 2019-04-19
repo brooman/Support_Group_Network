@@ -3574,6 +3574,7 @@ module.exports = baseIsSet;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__wdsBlocks_hero__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__wdsBlocks_two_column__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__wdsBlocks_recent_posts__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_container__ = __webpack_require__(136);
 
 
 
@@ -3596,6 +3597,9 @@ module.exports = baseIsSet;
 
 
 
+
+
+// CGB / SGN Blocks
 
 
 class SaveFilters {
@@ -3623,6 +3627,9 @@ class SaveFilters {
     new __WEBPACK_IMPORTED_MODULE_18__wdsBlocks_hero__["a" /* WDS_Hero_Block */]();
     new __WEBPACK_IMPORTED_MODULE_19__wdsBlocks_two_column__["a" /* WDS_TwoColumn_Block */]();
     new __WEBPACK_IMPORTED_MODULE_20__wdsBlocks_recent_posts__["a" /* WDS_RecentPosts_Block */]();
+
+    // CGB / SGN Blocks
+    new __WEBPACK_IMPORTED_MODULE_21__cgb_container__["a" /* CGBContainer */]();
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = SaveFilters;
@@ -3710,39 +3717,51 @@ class CoreTextColumns extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* 
 
 class CoreColumns extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* CleanFilter */] {
 
-  constructor() {
-    super('core-columns');
-  }
-
-  hookCallback(attributes, name, innerBlocks) {
-    if (!innerBlocks.length) {
-      return attributes;
+    constructor() {
+        super('core-columns');
     }
 
-    let columns = {
-      column_1: [],
-      column_2: []
-    };
+    hookCallback(attributes, name, innerBlocks) {
+        // if only contains one block, return attributes
+        if (!innerBlocks.length) {
+            return attributes;
+        }
 
-    for (const [index, block] of innerBlocks.entries()) {
-      let blockName = block.name.replace('/', '-');
-      innerBlocks[index].data = {
-        attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
-      };
-      innerBlocks[index].name = block.name;
-      if ('column-1' === block.attributes.layout) {
-        columns.column_1.push(innerBlocks[index]);
-      } else if ('column-2' === block.attributes.layout) {
-        columns.column_2.push(innerBlocks[index]);
-      }
+        // Define columns
+        let columns = {
+            column_1: [],
+            column_2: []
+        };
+
+        // For each block entry, extract index and block
+        for (const [index, block] of innerBlocks.entries()) {
+            // Retrieve and format block name
+            let blockName = block.name.replace('/', '-');
+
+            // Add the inner block's data to the innerBlocks output array
+            innerBlocks[index].data = {
+                attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
+            };
+            // Associate the innerBlocks data with the blockName
+            innerBlocks[index].name = block.name;
+
+            // Validation to determine which column to put inner block
+            if ('column-1' === block.attributes.layout) {
+                // Put block in col 1
+                columns.column_1.push(innerBlocks[index]);
+            } else if ('column-2' === block.attributes.layout) {
+                // Put block in col 2
+                columns.column_2.push(innerBlocks[index]);
+            }
+        }
+
+        // Return attributes, innerBlocks & cols
+        return {
+            attributes: attributes,
+            innerBlocks: innerBlocks,
+            columns: columns
+        };
     }
-
-    return {
-      attributes: attributes,
-      innerBlocks: innerBlocks,
-      columns: columns
-    };
-  }
 
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = CoreColumns;
@@ -4097,6 +4116,65 @@ class BlockRegister {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
+
+/***/ }),
+/* 136 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CleanFilter__ = __webpack_require__(0);
+
+
+class CGBContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* CleanFilter */] {
+
+    constructor() {
+        super('cgb-block-boxcontainer');
+    }
+
+    hookCallback(attributes, name, innerBlocks) {
+        // if only contains one block, return attributes
+        // if ( ! innerBlocks.length ) {
+        //     return attributes;
+        // }
+
+        // Define container
+        let container = [];
+
+        // For each block entry, extract index and block
+        for (const [index, block] of innerBlocks.entries()) {
+            // Retrieve and format block name
+            let blockName = block.name.replace('/', '-');
+
+            // Add the inner block's data to the innerBlocks output array
+            innerBlocks[index].data = {
+                attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
+            };
+            // Associate the innerBlocks data with the blockName
+            innerBlocks[index].name = block.name;
+
+            // Put
+            container.push(innerBlocks[index]);
+            // // Validation to determine which column to put inner block
+            // if ( 'column-1' === block.attributes.layout ) {
+            //     // Put block in col 1
+            //     columns.column_1.push( innerBlocks[index] );
+            // } else if ( 'column-2' === block.attributes.layout ) {
+            //     // Put block in col 2
+            //     columns.column_2.push( innerBlocks[index] );
+            // }
+        }
+
+        // Return attributes, innerBlocks & cols
+        return {
+            attributes: attributes,
+            innerBlocks: innerBlocks,
+            container: container
+        };
+    }
+
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = CGBContainer;
+
 
 /***/ })
 /******/ ]);

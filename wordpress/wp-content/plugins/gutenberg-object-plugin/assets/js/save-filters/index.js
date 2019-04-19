@@ -22,6 +22,9 @@ import { WDS_Hero_Block } from "./wdsBlocks/hero";
 import { WDS_TwoColumn_Block } from "./wdsBlocks/two-column";
 import { WDS_RecentPosts_Block } from "./wdsBlocks/recent-posts";
 
+// CGB / SGN Blocks
+import { CGBContainer } from './cgb-container';
+
 export class SaveFilters {
   constructor() {
     new CoreParagraph();
@@ -48,6 +51,7 @@ export class SaveFilters {
     new WDS_TwoColumn_Block();
     new WDS_RecentPosts_Block();
 
-
+    // CGB / SGN Blocks
+    new CGBContainer();
   }
 }
