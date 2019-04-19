@@ -3,7 +3,7 @@ import { InnerBlocks } from '@wordpress/editor';
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-registerBlockType( 'cgb/block-list', {
+registerBlockType( 'cgb/list', {
 
 	title: __( 'List' ),
 	icon: 'shield',

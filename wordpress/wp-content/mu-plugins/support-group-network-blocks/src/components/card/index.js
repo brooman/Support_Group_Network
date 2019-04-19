@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-registerBlockType( 'cgb/block-card', {
+registerBlockType( 'cgb/card', {
 	title: __( 'Card' ),
 	icon: 'shield',
 	category: 'common',

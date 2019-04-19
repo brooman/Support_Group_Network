@@ -2,7 +2,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks } = wp.editor;
 
-registerBlockType( 'cgb/block-container', {
+registerBlockType( 'cgb/container', {
 
 	title: __( 'Container' ),
 	icon: 'shield',

@@ -3,7 +3,7 @@ import { InnerBlocks } from '@wordpress/editor';
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-registerBlockType( 'cgb/block-textbox', {
+registerBlockType( 'cgb/textbox', {
 
 	title: __( 'textbox - CGB Block' ),
 	icon: 'shield',

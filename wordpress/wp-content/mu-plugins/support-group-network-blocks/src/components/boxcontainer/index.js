@@ -20,24 +20,17 @@ const getLayout = ( count ) => {
 	}
 };
 
-registerBlockType( 'cgb/block-boxcontainer', {
+registerBlockType( 'cgb/boxcontainer', {
 
 	title: __( 'Container' ),
 	icon: 'shield',
 	category: 'common',
 
 	edit: function( props ) {
-		const { children } = props;
-
-		const count = React.Children.count( children );
-		const layout = getLayout( count );
-
-		const content = React.Children.map( children, ( child, index ) => {
-			return React.cloneElement( child, layout[ index ] );
-		} );
+		const { className } = props;
 
 		return (
-			<div className={ `box-container ${ count === 1 ? 'single' : '' }` }>
+			<div className={ className }>
 				<InnerBlocks
 					allowedBlocks={ [ 'sgnblocks/textblock' ] }
 				/>

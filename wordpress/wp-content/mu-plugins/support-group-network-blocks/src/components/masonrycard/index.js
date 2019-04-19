@@ -3,7 +3,7 @@ import { InnerBlocks } from '@wordpress/editor';
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-registerBlockType( 'cgb/block-masonrycard', {
+registerBlockType( 'cgb/masonrycard', {
 
 	title: __( 'MasonryCard' ),
 	icon: 'shield',
