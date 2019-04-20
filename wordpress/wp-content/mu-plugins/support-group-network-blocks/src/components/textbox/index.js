@@ -1,5 +1,5 @@
 const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, ColorPalette } = wp.blocks;
 const { RichText, InspectorControls } = wp.editor;
 
 registerBlockType( 'cgb/textbox', {
@@ -19,11 +19,15 @@ registerBlockType( 'cgb/textbox', {
 			source: 'children',
 			selector: '.text',
 		},
+		backgroundColorClass: {
+			type: 'string',
+			default: 'yellow',
+		},
 	},
 
 	edit( props ) {
 		const {
-			attributes: { title, content },
+			attributes: { title, content, backgroundColorClass },
 			className,
 			setAttributes,
 		} = props;
@@ -38,15 +42,21 @@ registerBlockType( 'cgb/textbox', {
 
 		// Get value from select > option
 		const onChangeColorOption = value => {
-			// Find some way to update the styling
-			// Maybe change class, maybe something else
+			setAttributes( { backgroundColorClass: value } );
 		};
+
+		const baseClassNames = [ className, backgroundColorClass ].join( ' ' );
 
 		return [
 			<InspectorControls>
 				Options
+				{ /*
+				<label className="blocks-base-control__label">Textbox Color</label>
+				<ColorPalette // Element Tag for Gutenberg standard colour selector
+					onChange={ onChangeColorOption } // onChange event callback
+				/> */ }
 			</InspectorControls>,
-			<div className={ className }>
+			<div className={ baseClassNames }>
 				<h2 className="title">
 					<RichText
 						tagName="span"
@@ -88,4 +98,3 @@ registerBlockType( 'cgb/textbox', {
 		);
 	},
 } );
-
