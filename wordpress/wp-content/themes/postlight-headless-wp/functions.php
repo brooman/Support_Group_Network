@@ -63,6 +63,8 @@ function support_group_network_color_palette() {
 	);
 }
 add_action( 'after_setup_theme', 'support_group_network_color_palette' );
+// -- Disable Custom Colors
+add_theme_support( 'disable-custom-colors' );
 
 function sgn_block_category( $categories, $post ) {
 	return array_merge(
