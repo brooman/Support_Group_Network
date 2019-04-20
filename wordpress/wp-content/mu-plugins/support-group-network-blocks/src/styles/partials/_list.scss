@@ -1,4 +1,4 @@
-.list {
+.wp-block-cgb-list {
   ul {
     display: grid;
     grid-template-columns: 1fr;
@@ -15,12 +15,12 @@
     .list-item {
       margin-left: 2rem;
       padding-right: 1rem;
-      padding-bottom: 1rem; 
+      padding-bottom: 1rem;
     }
   }
 }
 
-.list.wide {
+.wp-block-cgb-list.wide {
   @media screen and (min-width: $breakpoint){
     grid-column-end: span 2;
   }

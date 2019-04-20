@@ -1,4 +1,4 @@
-.footer {
+.wp-block-cgb-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -10,7 +10,7 @@
     padding: 2rem 5rem 3rem;
     display: flex;
     justify-content: space-around;
-    
+
     .section {
       display: flex;
       flex-direction: column;
@@ -31,7 +31,7 @@
       }
     }
   }
-  
+
   .bottom {
     width: 100%;
     text-align: center;

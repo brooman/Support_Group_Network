@@ -1,4 +1,4 @@
-.container {
+.wp-block-cgb-container {
   background-color: $themeColor-LightGrey;
   margin: 4rem 0;
   padding: 1rem;
@@ -7,14 +7,14 @@
     margin: 0;
     padding: 0.5rem 0;
   }
-  
+
   .container-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     background-color: $themeColor-White;
     padding: 1rem;
-    
+
     @media screen and (max-width: $breakpoint){
       grid-template-columns: 1fr;
     }
