@@ -1269,7 +1269,7 @@ module.exports = baseGetAllKeys;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__block_save_block_save__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__save_filters_index_js__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__block_register__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__block_register__ = __webpack_require__(137);
 
 
 
@@ -3574,8 +3574,8 @@ module.exports = baseIsSet;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__wdsBlocks_hero__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__wdsBlocks_two_column__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__wdsBlocks_recent_posts__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cgb_container__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cgb_container__ = __webpack_require__(139);
 
 
 
@@ -4094,50 +4094,9 @@ class WDS_RecentPosts_Block extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["
 
 
 /***/ }),
-/* 135 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CleanFilter__ = __webpack_require__(0);
-
-
-class CGBContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* CleanFilter */] {
-
-    constructor() {
-        super('cgb-container');
-    }
-
-    hookCallback(attributes, name, innerBlocks) {
-        // if only contains one block, return attributes
-        if (!innerBlocks.length) {
-            return attributes;
-        }
-
-        // For each block entry, extract index and block
-        for (const [index, block] of innerBlocks.entries()) {
-            // Retrieve and format block name
-            let blockName = block.name.replace('/', '-');
-
-            // Add the inner block's data to the innerBlocks output array
-            innerBlocks[index].data = {
-                attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
-            };
-            // Associate the innerBlocks data with the blockName
-            innerBlocks[index].name = block.name;
-        }
-
-        // Return attributes, innerBlocks & cols
-        return {
-            attributes: attributes,
-            innerBlocks: innerBlocks
-        };
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = CGBContainer;
-
-
-/***/ }),
-/* 136 */
+/* 135 */,
+/* 136 */,
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4164,7 +4123,7 @@ class BlockRegister {
 /* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4204,6 +4163,49 @@ class CGBBoxContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* 
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = CGBBoxContainer;
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CleanFilter__ = __webpack_require__(0);
+
+
+class CGBContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* CleanFilter */] {
+
+    constructor() {
+        super('cgb-container');
+    }
+
+    hookCallback(attributes, name, innerBlocks) {
+        // if only contains one block, return attributes
+        if (!innerBlocks.length) {
+            return attributes;
+        }
+
+        // For each block entry, extract index and block
+        for (const [index, block] of innerBlocks.entries()) {
+            // Retrieve and format block name
+            let blockName = block.name.replace('/', '-');
+
+            // Add the inner block's data to the innerBlocks output array
+            innerBlocks[index].data = {
+                attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
+            };
+            // Associate the innerBlocks data with the blockName
+            innerBlocks[index].name = block.name;
+        }
+
+        // Return attributes, innerBlocks & cols
+        return {
+            attributes: attributes,
+            innerBlocks: innerBlocks
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = CGBContainer;
 
 
 /***/ })
