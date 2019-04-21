@@ -1,6 +1,14 @@
 const { __ } = wp.i18n;
-const { registerBlockType, ColorPalette } = wp.blocks;
-const { RichText, InspectorControls } = wp.editor;
+
+const {
+	registerBlockType,
+} = wp.blocks;
+
+const {
+	RichText,
+	InspectorControls,
+	ColorPalette,
+} = wp.editor;
 
 registerBlockType( 'cgb/textbox', {
 
@@ -19,7 +27,7 @@ registerBlockType( 'cgb/textbox', {
 			source: 'children',
 			selector: '.text',
 		},
-		backgroundColorClass: {
+		backgroundColor: {
 			type: 'string',
 			default: 'yellow',
 		},
@@ -27,7 +35,7 @@ registerBlockType( 'cgb/textbox', {
 
 	edit( props ) {
 		const {
-			attributes: { title, content, backgroundColorClass },
+			attributes: { title, content, backgroundColor },
 			className,
 			setAttributes,
 		} = props;
@@ -42,19 +50,38 @@ registerBlockType( 'cgb/textbox', {
 
 		// Get value from select > option
 		const onChangeColorOption = value => {
-			setAttributes( { backgroundColorClass: value } );
+			let colorClass;
+
+			if ( value === '#FFFB56' ) {
+				colorClass = 'yellow';
+			} else if ( value === '#FF6356' ) {
+				colorClass = 'red';
+			} else if ( value === '#69D88A' ) {
+				colorClass = 'green';
+			} else if ( value === '#57DEF4' ) {
+				colorClass = 'blue';
+			} else {
+				// Assume dark is chosen
+				colorClass = 'lightdark';
+			}
+
+			setAttributes( { backgroundColor: colorClass } );
 		};
 
-		const baseClassNames = [ className, backgroundColorClass ].join( ' ' );
+		const baseClassNames = [ className, backgroundColor ].join( ' ' );
 
 		return [
 			<InspectorControls>
 				Options
-				{ /*
-				<label className="blocks-base-control__label">Textbox Color</label>
-				<ColorPalette // Element Tag for Gutenberg standard colour selector
-					onChange={ onChangeColorOption } // onChange event callback
-				/> */ }
+				<br />
+				<br />
+
+				<div id="cgb-block-textbox-inspector-control-wrapper">
+					<label className="blocks-base-control__label">Textbox Color</label>
+					<ColorPalette // Element Tag for Gutenberg standard colour selector
+						onChange={ onChangeColorOption } // onChange event callback
+					/>
+				</div>
 			</InspectorControls>,
 			<div className={ baseClassNames }>
 				<h2 className="title">
