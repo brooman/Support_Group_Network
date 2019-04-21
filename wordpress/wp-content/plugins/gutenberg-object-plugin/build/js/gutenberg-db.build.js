@@ -3574,8 +3574,8 @@ module.exports = baseIsSet;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__wdsBlocks_hero__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__wdsBlocks_two_column__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__wdsBlocks_recent_posts__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cgb_container__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cgb_container__ = __webpack_require__(136);
 
 
 
@@ -4094,36 +4094,7 @@ class WDS_RecentPosts_Block extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["
 
 
 /***/ }),
-/* 135 */,
-/* 136 */,
-/* 137 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class BlockRegister {
-
-  constructor() {
-    wp.hooks.addFilter('blocks.registerBlockType', 'gutes-array', this.registerCallback, 1, 1);
-  }
-
-  registerCallback(block) {
-
-    // if no bid, set it
-    if (block.attributes && !block.attributes.bid) {
-      block.attributes.bid = {
-        type: 'string'
-      };
-    }
-
-    return block;
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
-
-/***/ }),
-/* 138 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4166,7 +4137,7 @@ class CGBBoxContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* 
 
 
 /***/ }),
-/* 139 */
+/* 136 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4207,6 +4178,33 @@ class CGBContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* Cle
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = CGBContainer;
 
+
+/***/ }),
+/* 137 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class BlockRegister {
+
+  constructor() {
+    wp.hooks.addFilter('blocks.registerBlockType', 'gutes-array', this.registerCallback, 1, 1);
+  }
+
+  registerCallback(block) {
+
+    // if no bid, set it
+    if (block.attributes && !block.attributes.bid) {
+      block.attributes.bid = {
+        type: 'string'
+      };
+    }
+
+    return block;
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
 
 /***/ })
 /******/ ]);
