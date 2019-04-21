@@ -68,10 +68,7 @@ registerBlockType( 'cgb/card', {
 
 		return [
 			<InspectorControls>
-				Options <br />
-				<br />
-
-				<label className="blocks-base-control__label" htmlFor="url_id_1">Learn more... URL</label>
+				<label className="blocks-base-control__label" htmlFor="url_id_1">URL</label>
 				<RichText
 					id="url_id_1"
 					format="string"
