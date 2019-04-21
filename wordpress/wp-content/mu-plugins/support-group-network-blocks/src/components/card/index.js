@@ -71,7 +71,7 @@ registerBlockType( 'cgb/card', {
 				Options <br />
 				<br />
 
-				<label class="blocks-base-control__label" for="url_id_1">Learn more... URL</label>
+				<label className="blocks-base-control__label" htmlFor="url_id_1">Learn more... URL</label>
 				<RichText
 					id="url_id_1"
 					format="string"
