@@ -1,7 +1,6 @@
-import { InnerBlocks } from '@wordpress/editor';
-
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { InnerBlocks } = wp.editor;
 
 registerBlockType( 'cgb/supporterscontainer', {
 
@@ -14,9 +13,9 @@ registerBlockType( 'cgb/supporterscontainer', {
 
 		return (
 			<div className="supporters">
-				{ images.map( ( item, index ) => {
-					return <img src={ item.src } alt={ item.name } key={ index } />;
-				} ) }
+				<InnerBlocks
+					allowedBlocks={ [ 'cgb/supporter' ] }
+				/>
 			</div>
 		);
 	},
