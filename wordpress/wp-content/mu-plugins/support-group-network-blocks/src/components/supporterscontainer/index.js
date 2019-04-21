@@ -9,7 +9,6 @@ registerBlockType( 'cgb/supporterscontainer', {
 	category: 'sgn-blocks',
 
 	edit: function( props ) {
-		const { images } = props;
 
 		return (
 			<div className="supporters">
