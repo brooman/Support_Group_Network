@@ -66,6 +66,23 @@ add_action( 'after_setup_theme', 'support_group_network_color_palette' );
 // -- Disable Custom Colors
 add_theme_support( 'disable-custom-colors' );
 
+
+function sgn_allowed_block_types( $allowed_blocks ) {
+	
+	return array(
+		'cgb/boxcontainer',
+		'cgb/container',
+		'cgb/supporterscontainer',
+		'cgb/textbox',
+		'cgb/supporter',
+		'cgb/card',
+		'cgb/list',
+		'cgb/masonrycard',
+	);
+	
+}
+add_filter( 'allowed_block_types', 'sgn_allowed_block_types' );
+
 function sgn_block_category( $categories, $post ) {
 	return array_merge(
 		$categories,
