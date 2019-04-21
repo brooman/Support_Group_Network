@@ -14,7 +14,7 @@ import './components/card';
 import './components/container';
 import './components/list';
 import './components/masonrycard';
-import './components/supporters';
+import './components/supporter';
 import './components/supporterscontainer';
 import './components/textbox';
 
