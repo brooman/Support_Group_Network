@@ -11,7 +11,7 @@ registerBlockType( 'cgb/supporterscontainer', {
 	edit: function( props ) {
 
 		return (
-			<div className="supporters">
+			<div className={className}>
 				<InnerBlocks
 					allowedBlocks={ [ 'cgb/supporter' ] }
 				/>
@@ -19,7 +19,12 @@ registerBlockType( 'cgb/supporterscontainer', {
 		);
 	},
 
-	save: function( ) {
-		return null;
+	save: function( props ) {
+
+		return (
+			<div>
+				<InnerBlocks.Content />
+			</div>
+		);
 	},
 } );
