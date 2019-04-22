@@ -77,6 +77,7 @@ function sgn_allowed_block_types( $allowed_blocks ) {
 		'cgb/supporter',
 		'cgb/card',
 		'cgb/list',
+		'cgb/listitem',
 		'cgb/masonrycard',
 	);
 	
