@@ -3576,6 +3576,7 @@ module.exports = baseIsSet;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__wdsBlocks_recent_posts__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cgb_container__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__cgb_supporterscontainer__ = __webpack_require__(138);
 
 
 
@@ -3601,6 +3602,7 @@ module.exports = baseIsSet;
 
 
 // CGB / SGN Blocks
+
 
 
 
@@ -3633,6 +3635,7 @@ class SaveFilters {
     // CGB / SGN Blocks
     new __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__["a" /* CGBBoxContainer */]();
     new __WEBPACK_IMPORTED_MODULE_22__cgb_container__["a" /* CGBContainer */]();
+    new __WEBPACK_IMPORTED_MODULE_23__cgb_supporterscontainer__["a" /* CGBSupportersContainer */]();
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = SaveFilters;
@@ -4205,6 +4208,49 @@ class BlockRegister {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
+
+/***/ }),
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CleanFilter__ = __webpack_require__(0);
+
+
+class CGBSupportersContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* CleanFilter */] {
+
+    constructor() {
+        super('cgb-supporterscontainer');
+    }
+
+    hookCallback(attributes, name, innerBlocks) {
+        // if only contains one block, return attributes
+        if (!innerBlocks.length) {
+            return attributes;
+        }
+
+        // For each block entry, extract index and block
+        for (const [index, block] of innerBlocks.entries()) {
+            // Retrieve and format block name
+            let blockName = block.name.replace('/', '-');
+
+            // Add the inner block's data to the innerBlocks output array
+            innerBlocks[index].data = {
+                attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
+            };
+            // Associate the innerBlocks data with the blockName
+            innerBlocks[index].name = block.name;
+        }
+
+        // Return attributes, innerBlocks & cols
+        return {
+            attributes: attributes,
+            innerBlocks: innerBlocks
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = CGBSupportersContainer;
+
 
 /***/ })
 /******/ ]);
