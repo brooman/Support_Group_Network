@@ -55,17 +55,18 @@ registerBlockType( 'cgb/supporter', {
 					placeholder="Enter supporter name"
 				/>
 			</InspectorControls>,
-			<MediaUpload
-				className={ className }
-				onSelect={ selectImage }
-				render={ ( { open } ) => {
-					return <img
-						src={ image }
-						alt={ name }
-						onClick={ open }
-					/>;
-				} }
-			/>,
+			<div className={ className } >
+				<MediaUpload
+					onSelect={ selectImage }
+					render={ ( { open } ) => {
+						return <img
+							src={ image }
+							alt={ name }
+							onClick={ open }
+						/>;
+					} }
+				/>
+			</div>,
 		];
 	},
 
@@ -75,6 +76,6 @@ registerBlockType( 'cgb/supporter', {
 			name,
 		} = props;
 
-		return <img src={ image } alt={ name } />;
+		return <div><img src={ image } alt={ name } /></div>;
 	},
 } );
