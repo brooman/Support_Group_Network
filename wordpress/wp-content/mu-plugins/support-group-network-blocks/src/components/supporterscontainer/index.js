@@ -9,9 +9,12 @@ registerBlockType( 'cgb/supporterscontainer', {
 	category: 'sgn-blocks',
 
 	edit: function( props ) {
+		const {
+			className,
+		} = props;
 
 		return (
-			<div className={className}>
+			<div className={ className }>
 				<InnerBlocks
 					allowedBlocks={ [ 'cgb/supporter' ] }
 				/>
@@ -20,7 +23,6 @@ registerBlockType( 'cgb/supporterscontainer', {
 	},
 
 	save: function( props ) {
-
 		return (
 			<div>
 				<InnerBlocks.Content />
