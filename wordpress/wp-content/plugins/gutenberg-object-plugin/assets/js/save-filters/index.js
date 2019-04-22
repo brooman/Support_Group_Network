@@ -25,6 +25,7 @@ import { WDS_RecentPosts_Block } from "./wdsBlocks/recent-posts";
 // CGB / SGN Blocks
 import { CGBBoxContainer } from './cgb-boxcontainer';
 import { CGBContainer } from './cgb-container';
+import { CGBSupportersContainer } from './cgb-supporterscontainer';
 
 export class SaveFilters {
   constructor() {
@@ -55,5 +56,6 @@ export class SaveFilters {
     // CGB / SGN Blocks
     new CGBBoxContainer();
     new CGBContainer();
+    new CGBSupportersContainer();
   }
 }
