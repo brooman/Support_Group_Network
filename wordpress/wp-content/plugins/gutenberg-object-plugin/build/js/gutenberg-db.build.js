@@ -1269,7 +1269,7 @@ module.exports = baseGetAllKeys;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__block_save_block_save__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__save_filters_index_js__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__block_register__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__block_register__ = __webpack_require__(138);
 
 
 
@@ -3576,7 +3576,8 @@ module.exports = baseIsSet;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__wdsBlocks_recent_posts__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cgb_container__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__cgb_supporterscontainer__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__cgb_supporterscontainer__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__cgb_list__ = __webpack_require__(139);
 
 
 
@@ -3602,6 +3603,7 @@ module.exports = baseIsSet;
 
 
 // CGB / SGN Blocks
+
 
 
 
@@ -3636,6 +3638,7 @@ class SaveFilters {
     new __WEBPACK_IMPORTED_MODULE_21__cgb_boxcontainer__["a" /* CGBBoxContainer */]();
     new __WEBPACK_IMPORTED_MODULE_22__cgb_container__["a" /* CGBContainer */]();
     new __WEBPACK_IMPORTED_MODULE_23__cgb_supporterscontainer__["a" /* CGBSupportersContainer */]();
+    new __WEBPACK_IMPORTED_MODULE_24__cgb_list__["a" /* CGBList */]();
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = SaveFilters;
@@ -4187,33 +4190,6 @@ class CGBContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* Cle
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class BlockRegister {
-
-  constructor() {
-    wp.hooks.addFilter('blocks.registerBlockType', 'gutes-array', this.registerCallback, 1, 1);
-  }
-
-  registerCallback(block) {
-
-    // if no bid, set it
-    if (block.attributes && !block.attributes.bid) {
-      block.attributes.bid = {
-        type: 'string'
-      };
-    }
-
-    return block;
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
-
-/***/ }),
-/* 138 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CleanFilter__ = __webpack_require__(0);
 
 
@@ -4250,6 +4226,76 @@ class CGBSupportersContainer extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__[
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = CGBSupportersContainer;
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class BlockRegister {
+
+  constructor() {
+    wp.hooks.addFilter('blocks.registerBlockType', 'gutes-array', this.registerCallback, 1, 1);
+  }
+
+  registerCallback(block) {
+
+    // if no bid, set it
+    if (block.attributes && !block.attributes.bid) {
+      block.attributes.bid = {
+        type: 'string'
+      };
+    }
+
+    return block;
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (BlockRegister);
+
+/***/ }),
+/* 139 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CleanFilter__ = __webpack_require__(0);
+
+
+class CGBList extends __WEBPACK_IMPORTED_MODULE_0__CleanFilter__["a" /* CleanFilter */] {
+
+    constructor() {
+        super('cgb-list');
+    }
+
+    hookCallback(attributes, name, innerBlocks) {
+        // if only contains one block, return attributes
+        if (!innerBlocks.length) {
+            return attributes;
+        }
+
+        // For each block entry, extract index and block
+        for (const [index, block] of innerBlocks.entries()) {
+            // Retrieve and format block name
+            let blockName = block.name.replace('/', '-');
+
+            // Add the inner block's data to the innerBlocks output array
+            innerBlocks[index].data = {
+                attributes: wp.hooks.applyFilters(`clean_data_${blockName}`, block.attributes, block.name, block.innerBlocks)
+            };
+            // Associate the innerBlocks data with the blockName
+            innerBlocks[index].name = block.name;
+        }
+
+        // Return attributes, innerBlocks & cols
+        return {
+            attributes: attributes,
+            innerBlocks: innerBlocks
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = CGBList;
 
 
 /***/ })
