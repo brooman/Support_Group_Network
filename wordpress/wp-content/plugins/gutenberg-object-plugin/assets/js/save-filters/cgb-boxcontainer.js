@@ -28,7 +28,7 @@ export class CGBBoxContainer extends CleanFilter {
         // Return attributes, innerBlocks & cols
         return {
             attributes: attributes,
-            innerBlocks: innerBlocks
+            innerBlocks: innerBlocks,
         };
     }
 }
