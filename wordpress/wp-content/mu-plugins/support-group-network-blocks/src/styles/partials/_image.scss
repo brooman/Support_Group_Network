@@ -12,3 +12,11 @@
 .image.is-3x4 {
   padding-top: 75%;
 }
+
+.wp-block-cgb-supporter{
+	img{
+		width: initial !important;
+		max-height: 240px !important;
+		min-height: initial !important;
+	}
+}
