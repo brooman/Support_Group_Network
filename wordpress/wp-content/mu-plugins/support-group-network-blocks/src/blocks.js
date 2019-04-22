@@ -9,13 +9,14 @@
  * Webpack is compiling as the input file.
  */
 
-import './components/boxcontainer';
+import './components/box_container';
 import './components/card';
 import './components/container';
 import './components/list';
-import './components/masonrycard';
+import './components/list_item';
+import './components/masonry_card';
 import './components/supporter';
-import './components/supporterscontainer';
+import './components/supporters_container';
 import './components/textbox';
 
 import './styles/style.scss';
