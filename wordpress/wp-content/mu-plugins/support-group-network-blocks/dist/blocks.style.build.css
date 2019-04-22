@@ -300,6 +300,11 @@ img {
 .image.is-3x4 {
   padding-top: 75%; }
 
+.wp-block-cgb-supporter img {
+  width: initial !important;
+  max-height: 240px !important;
+  min-height: initial !important; }
+
 .wp-block-cgb-list ul {
   display: grid;
   grid-template-columns: 1fr;
@@ -694,6 +699,11 @@ img {
 
 .image.is-3x4 {
   padding-top: 75%; }
+
+.wp-block-cgb-supporter img {
+  width: initial !important;
+  max-height: 240px !important;
+  min-height: initial !important; }
 
 .wp-block-cgb-list ul {
   display: grid;
