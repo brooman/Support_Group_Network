@@ -9,24 +9,51 @@ registerBlockType( 'cgb/list', {
 	icon: 'shield',
 	category: 'sgn-blocks',
 
-	edit: function( props ) {
-		const { title, items, wide } = props;
+	attributes: {
+		title: {
+			type: 'string',
+			selector: 'h3',
+		},
+	},
 
-		const isWide = wide ? 'wide' : '';
+	edit: function( props ) {
+		const {
+			attributes: {
+				title,
+			},
+			className,
+		} = props;
+
+		// const isWide = wide ? 'wide' : '';
+
+		const classNames = [
+			className,
+		].join( ' ' );
 
 		return (
-			<div className={ `list ${ isWide }` }>
+			<div className={ classNames }>
 				<h3>{ title }</h3>
 				<ul>
-					{ items.map( ( item, index ) => {
-						return <li className="list-item" key={ index }>{ item }</li>;
-					} ) }
+					<InnerBlocks />
 				</ul>
 			</div>
 		);
 	},
 
-	save: function( ) {
-		return null;
+	save: function( props ) {
+		const {
+			attributes: {
+				title,
+			},
+		} = props;
+
+		return (
+			<div>
+				<h3>{ title }</h3>
+				<ul>
+					<InnerBlocks.Content />
+				</ul>
+			</div>
+		);
 	},
 } );
