@@ -96,3 +96,22 @@ function sgn_block_category( $categories, $post ) {
 	);
 }
 add_filter( 'block_categories', 'sgn_block_category', 10, 2);
+
+function danger_block_category( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'child',
+				'title' => __( 'Children (Only for nesting inside allowed blocks)', 'child-blocks' ),
+			),
+		)
+	);
+}
+add_filter( 'block_categories', 'danger_block_category', 10, 2);
+
+add_filter( 'allowed_block_types', 'mrw_unset_core_blocks' );
+function mrw_unset_core_blocks( $blocks ) {
+    unset($blocks['core/paragraph']);
+    return $blocks;
+}
