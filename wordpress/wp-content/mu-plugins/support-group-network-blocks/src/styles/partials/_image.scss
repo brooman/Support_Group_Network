@@ -1,0 +1,22 @@
+.image {
+    background-repeat: no-repeat;
+    background-position: center;
+		width: 100%;
+		min-height: 500px;
+}
+
+.image.is-1x1 {
+  padding-top: 100%;
+}
+
+.image.is-3x4 {
+  padding-top: 75%;
+}
+
+.wp-block-cgb-supporter{
+	img{
+		width: initial !important;
+		max-height: 240px !important;
+		min-height: initial !important;
+	}
+}

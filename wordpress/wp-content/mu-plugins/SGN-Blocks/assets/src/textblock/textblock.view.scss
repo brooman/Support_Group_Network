@@ -4,25 +4,37 @@
     padding: 1rem;
     width: 100%;
 
-    .title{
+      
+    .title {
         margin: 0 0 1rem;
-
-        span{
-            padding: 0 0 1rem;
-            border-bottom: 1px solid #000;
+        font-weight: 300;
+        
+        span {
+        padding: 0 0 1rem;
+        border-bottom: 1px solid #000;
         }
     }
 
-    .text{
+    .text {
         padding: 1rem 0;
         margin: 0 0 1rem;
-        font-family: "Source Sans Pro", sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
         font-size: 24px;
+        line-height: 32px;
+    }
 
-        @media screen and (max-width: 768px) {
-            &{
-                font-size: 14px; 
-            } 
+    /* Fix for lightdark cards */
+    &.lightdark > .title > span {
+        border-bottom: 1px solid #fff;
+    }
+
+    &.large {
+    grid-row: span 2;
+    grid-column: span 2;
+    
+        .text {
+            font-size: 32px;
+            line-height: 38px;
         }
     }
 
@@ -41,5 +53,9 @@
     
     &.blue{
         background-color: #57DEF4;
+    }
+    
+    &.wide {
+        grid-column: 1 / span 2 !important;
     }
 }

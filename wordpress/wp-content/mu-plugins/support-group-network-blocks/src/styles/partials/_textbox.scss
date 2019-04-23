@@ -1,0 +1,41 @@
+.wp-block-cgb-textbox {
+  padding: 1rem;
+  width: 100%;
+
+  .title {
+    margin: 0 0 1rem;
+    font-weight: 300;
+
+    span {
+      padding: 0 0 1rem;
+      border-bottom: 1px solid $themeColor-Black;
+    }
+  }
+
+  .text {
+    padding: 1rem 0;
+    margin: 0 0 1rem;
+    font-family: $font-alt;
+    font-size: $font-lg;
+    line-height: $font-lh-lg;
+  }
+}
+
+/* Fix for lightdark cards */
+.wp-block-cgb-textbox.lightdark > .title > span {
+  border-bottom: 1px solid $themeColor-White;
+}
+
+.wp-block-cgb-textbox.large {
+  grid-row: span 2;
+  grid-column: span 2;
+
+  .text {
+    font-size: $font-heading;
+    line-height: $font-lh-heading;
+  }
+}
+
+.wp-block-cgb-textbox.wide {
+  grid-column: 1 / span 2 !important;
+}
