@@ -24,6 +24,7 @@ registerBlockType( 'cgb/card', {
 			selector: '.text',
 		},
 		link: {
+			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
 			selector: 'a.link',
