@@ -1,0 +1,37 @@
+//Greyscale
+$themeColor-White: #fff;
+$themeColor-LightGrey: #F2F4F3;
+$themeColor-LightDark: #363537;
+$themeColor-Dark: #131414;
+$themeColor-Black: #000;
+
+//Colors
+$themeColor-Green: #69D88A;
+$themeColor-Yellow: #FFFB56;
+$themeColor-Red: #FF6356;
+$themeColor-Blue: #57DEF4;
+
+.yellow {
+  color: $themeColor-Black !important;
+  background-color: $themeColor-Yellow !important;
+}
+
+.red {
+  color: $themeColor-Black !important;
+  background-color: $themeColor-Red !important;
+}
+
+.blue {
+  color: $themeColor-Black !important;
+  background-color: $themeColor-Blue !important;
+}
+
+.green {
+  color: $themeColor-Black !important;
+  background-color: $themeColor-Green !important;
+}
+
+.lightdark {
+  color: $themeColor-White !important;
+  background-color: $themeColor-LightDark !important;
+}

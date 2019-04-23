@@ -1,0 +1,40 @@
+$breakpoint: 1028px;
+
+@import 'theme-colors';
+@import 'theme-font';
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+}
+
+.content {
+  min-height: 100vh;
+  padding: 0 10vw;
+
+  @media screen and (max-width: $breakpoint){
+    padding: 0 5vw;
+  }
+}
+
+.icon {
+  height: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+img {
+  object-fit: contain;
+  height: 100%;
+}
+
+@import 'partials/_partials';
+@import 'layout/_layout';
