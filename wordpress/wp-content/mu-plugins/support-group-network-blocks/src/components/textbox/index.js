@@ -39,6 +39,11 @@ registerBlockType( 'cgb/textbox', {
 			type: 'string',
 			default: 'yellow',
 		},
+		link: {
+			type: 'string',
+			selector: 'a.link',
+			default: '',
+		},
 		// wide: {
 		// 	type: 'boolean',
 		// 	default: false,
@@ -51,6 +56,7 @@ registerBlockType( 'cgb/textbox', {
 				title,
 				content,
 				color,
+				link,
 				// wide,
 			},
 			className,
@@ -75,6 +81,10 @@ registerBlockType( 'cgb/textbox', {
 
 		const onChangeTitle = title => {
 			setAttributes( { title } );
+		};
+
+		const onChangeLink = link => {
+			setAttributes( { link } );
 		};
 
 		// Get value from select > option
@@ -108,14 +118,25 @@ registerBlockType( 'cgb/textbox', {
 		return [
 			<InspectorControls>
 
-				<div id="cgb-block-textbox-inspector-control-wrapper">
+				<div id="cgb-block-textbox-inspector-control-wrapper-1">
 					<label className="blocks-base-control__label">Textbox Color</label>
 					<ColorPalette // Element Tag for Gutenberg standard colour selector
 						onChange={ onChangeColor } // onChange event callback
 					/>
 				</div>
 
-				{/* <WideCheckboxControl /> */}
+				<div id="cgb-block-textbox-inspector-control-wrapper-2">
+					<label className="blocks-base-control__label" htmlFor="name_id_1">Link related to card (optional)</label>
+					<RichText
+						id="name_id_1"
+						format="string"
+						onChange={ onChangeLink }
+						value={ link }
+						placeholder="Enter descriptive text for image"
+					/>
+				</div>
+
+				{ /* <WideCheckboxControl /> */ }
 			</InspectorControls>,
 			<div
 				// isWide={ wide }
@@ -137,6 +158,10 @@ registerBlockType( 'cgb/textbox', {
 					value={ content }
 					onChange={ onChangeContent }
 				/>
+
+				{ ( link !== '' ? (
+					<a className="link" href={ link }>Learn more...</a>
+				) : null ) }
 			</div>,
 		];
 	},
@@ -146,6 +171,7 @@ registerBlockType( 'cgb/textbox', {
 			attributes: {
 				title,
 				content,
+				link,
 			},
 		} = props;
 
@@ -158,6 +184,10 @@ registerBlockType( 'cgb/textbox', {
 				</h2>
 
 				<p className="text">{ content }</p>
+
+				{ ( link !== '' ? (
+					<a className="link" href={ link }>Learn more...</a>
+				) : null ) }
 			</div>
 		);
 	},
