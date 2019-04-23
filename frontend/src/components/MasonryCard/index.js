@@ -5,7 +5,7 @@ const MasonryCard = props => {
   const { children, title, content, link } = props;
 
   return (
-    <div className="card">
+    <div className="card wide">
       <div className="masonry">
         { children }
       </div>
