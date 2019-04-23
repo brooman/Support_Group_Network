@@ -8,6 +8,8 @@ services:
             - MYSQL_DATABASE=${WORDPRESS_DB_NAME}
             - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
             - MYSQL_USER=${WORDPRESS_DB_USER}
+        expose:
+            - '3307'
         image: mariadb
         ports:
             - '3307:3306'
