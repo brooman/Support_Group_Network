@@ -6,9 +6,9 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, InspectorControls, MediaUpload } = wp.editor;
 
-registerBlockType( 'cgb/supporter', {
+registerBlockType( 'cgb/image', {
 
-	title: __( 'Supporter' ),
+	title: __( 'Image' ),
 	icon: 'shield',
 	category: 'child',
 
@@ -17,7 +17,7 @@ registerBlockType( 'cgb/supporter', {
 			type: 'string',
 			default: 'http://placehold.it/500',
 		},
-		name: {
+		alt: {
 			type: 'string',
 			selector: 'attribute',
 			attribute: 'alt',
@@ -28,14 +28,14 @@ registerBlockType( 'cgb/supporter', {
 		const {
 			attributes: {
 				image,
-				name,
+				alt,
 			},
 			className,
 			setAttributes,
 		} = props;
 
-		const onChangeName = name => {
-			setAttributes( { name } );
+		const onChangeAlt = alt => {
+			setAttributes( { alt } );
 		};
 
 		const selectImage = ( value ) => {
@@ -46,13 +46,13 @@ registerBlockType( 'cgb/supporter', {
 
 		return [
 			<InspectorControls>
-				<label className="blocks-base-control__label" htmlFor="name_id_1">Supporter Name</label>
+				<label className="blocks-base-control__label" htmlFor="name_id_1">Image alt text</label>
 				<RichText
 					id="name_id_1"
 					format="string"
-					onChange={ onChangeName }
-					value={ name }
-					placeholder="Enter supporter name"
+					onChange={ onChangeAlt }
+					value={ alt }
+					placeholder="Enter descriptive text for image"
 				/>
 			</InspectorControls>,
 			<div className={ className } >
@@ -61,7 +61,7 @@ registerBlockType( 'cgb/supporter', {
 					render={ ( { open } ) => {
 						return <img
 							src={ image }
-							alt={ name }
+							alt={ alt }
 							onClick={ open }
 						/>;
 					} }
@@ -73,9 +73,9 @@ registerBlockType( 'cgb/supporter', {
 	save: function( props ) {
 		const {
 			image,
-			name,
+			alt,
 		} = props;
 
-		return <div><img src={ image } alt={ name } /></div>;
+		return <div><img src={ image } alt={ alt } /></div>;
 	},
 } );

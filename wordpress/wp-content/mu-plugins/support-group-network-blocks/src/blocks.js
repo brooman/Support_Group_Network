@@ -12,6 +12,8 @@
 import './components/box_container';
 import './components/card';
 import './components/container';
+import './components/hero';
+import './components/image';
 import './components/list';
 import './components/list_item';
 import './components/masonry_card';

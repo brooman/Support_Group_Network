@@ -2,6 +2,7 @@ import { InnerBlocks } from '@wordpress/editor';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { RichText, InspectorControls } = wp.editor;
 
 registerBlockType( 'cgb/masonrycard', {
 
@@ -29,10 +30,35 @@ registerBlockType( 'cgb/masonrycard', {
 	},
 
 	edit: function( props ) {
-		const { title, content, link } = props;
+		const {
+			attributes: {
+				title,
+				content,
+				link,
+			},
+			className,
+			setAttributes,
+		} = props;
 
-		return (
-			<div className="card">
+		const onChangeLink = link => {
+			setAttributes( { link } );
+		};
+
+		return [
+			<InspectorControls>
+
+				<div id="cgb-block-textbox-inspector-control-wrapper-2">
+					<label className="blocks-base-control__label" htmlFor="name_id_1">Link related to card (optional)</label>
+					<RichText
+						id="name_id_1"
+						format="string"
+						onChange={ onChangeLink }
+						value={ link }
+						placeholder="Enter descriptive text for image"
+					/>
+				</div>
+			</InspectorControls>,
+			<div className={ className }>
 				<div className="masonry">
 					<InnerBlocks
 						allowedBlocks={
@@ -47,9 +73,12 @@ registerBlockType( 'cgb/masonrycard', {
 				<div className="card-content">
 					<p className="text">{ content }</p>
 				</div>
-				<a className="link" href={ link }>Learn more...</a>
-			</div>
-		);
+
+				{ ( link !== '' ? (
+					<a className="link" href={ link }>Learn more...</a>
+				) : null ) }
+			</div>,
+		];
 	},
 
 	save: function( props ) {
@@ -70,7 +99,10 @@ registerBlockType( 'cgb/masonrycard', {
 				<div className="card-content">
 					<p className="text">{ content }</p>
 				</div>
-				<a className="link" href={ link }>Learn more...</a>
+
+				{ ( link !== '' ? (
+					<a className="link" href={ link }>Learn more...</a>
+				) : null ) }
 			</div>
 		);
 	},

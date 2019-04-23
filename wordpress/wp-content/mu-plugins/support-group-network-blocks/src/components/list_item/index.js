@@ -10,7 +10,7 @@ registerBlockType( 'cgb/listitem', {
 
 	title: __( 'List Item' ),
 	icon: 'shield',
-	category: 'sgn-blocks',
+	category: 'child',
 
 	attributes: {
 		content: {
