@@ -60,7 +60,7 @@
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: $breakpoint){
   .header {
     padding: 5px 5vw;
     justify-content: space-between;
