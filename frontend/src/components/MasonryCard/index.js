@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MasonryCard = props => {
-  const { children, title, content } = props;
+  const { children, title, content, link } = props;
 
   return (
     <div className="card">
@@ -13,7 +13,7 @@ const MasonryCard = props => {
       <div className="card-content">
         <p className="text">{content}</p>
       </div>
-      <a className="link" href="">Learn more...</a>
+      {link && <a className="link" href={link.url}>{link.text}</a>}
     </div>
   );
 };

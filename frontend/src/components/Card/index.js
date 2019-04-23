@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from '../Image';
 
 const Card = props => {
-  const {image, title, content} = props
+  const {image, title, content, link} = props
 
   return (
     <div className="card">
@@ -12,7 +12,7 @@ const Card = props => {
       <div className="card-content">
         <p className="text">{content}</p>
       </div>
-      <a className="link" href="">Learn more...</a>
+      {link && <a className="link" href={link.url}>{link.text}</a>}
     </div>
   );
 };
