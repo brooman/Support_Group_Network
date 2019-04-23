@@ -39,34 +39,35 @@ registerBlockType( 'cgb/textbox', {
 			type: 'string',
 			default: 'yellow',
 		},
-		wide: {
-			type: 'boolean',
-			default: false,
-		},
+		// wide: {
+		// 	type: 'boolean',
+		// 	default: false,
+		// },
 	},
 
 	edit( props ) {
 		const {
-			attributes: { title, content, color, wide },
+			attributes: {
+				title,
+				content,
+				color,
+				// wide,
+			},
 			className,
 			setAttributes,
 		} = props;
 
-		console.log( wide === true );
-
-		const WideCheckboxControl = () =>(
-			<CheckboxControl
-				heading="Wide"
-				label="Is wide"
-				help="Should box be wide or not?"
-				checked={ ( wide === true ) }
-				onChange={ () => {
-					// console.log( isChecked );
-
-					setAttributes( { wide: ! wide } );
-				} }
-			/>
-		);
+		// const WideCheckboxControl = () =>(
+		// 	<CheckboxControl
+		// 		heading="Wide"
+		// 		label="Is wide"
+		// 		help="Should box be wide or not?"
+		// 		checked={ ( wide ) }
+		// 		onChange={ () => {
+		// 			setAttributes( { wide: ! wide } );
+		// 		} }
+		// 	/>
+		// );
 
 		const onChangeContent = content => {
 			setAttributes( { content } );
@@ -96,9 +97,13 @@ registerBlockType( 'cgb/textbox', {
 			setAttributes( { color: colorClass } );
 		};
 
-		const wideClass = ( wide ) ? 'wide' : '';
+		// const wideClass = ( wide ) ? 'wide' : '';
 
-		const baseClassNames = [ className, color, wideClass ].join( ' ' );
+		const baseClassNames = [
+			className,
+			color,
+			// wideClass,
+		].join( ' ' );
 
 		return [
 			<InspectorControls>
@@ -110,9 +115,12 @@ registerBlockType( 'cgb/textbox', {
 					/>
 				</div>
 
-				<WideCheckboxControl />
+				{/* <WideCheckboxControl /> */}
 			</InspectorControls>,
-			<div isWide={ wide } className={ baseClassNames }>
+			<div
+				// isWide={ wide }
+				className={ baseClassNames }
+			>
 				<h2 className="title">
 					<RichText
 						tagName="span"
