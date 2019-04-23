@@ -71,14 +71,17 @@ function sgn_allowed_block_types( $allowed_blocks ) {
 	
 	return array(
 		'cgb/boxcontainer',
-		'cgb/container',
-		'cgb/supporterscontainer',
-		'cgb/textbox',
-		'cgb/supporter',
 		'cgb/card',
+		'cgb/container',
+		'cgb/divider',
+		'cgb/hero',
+		'cgb/image',
 		'cgb/list',
 		'cgb/listitem',
 		'cgb/masonrycard',
+		'cgb/supporter',
+		'cgb/supporterscontainer',
+		'cgb/textbox',
 	);
 	
 }
