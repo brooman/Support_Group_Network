@@ -4,15 +4,21 @@
   height: 100%;
   background-color: $themeColor-White;
 
+  span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
   .card-content {
     position: relative;
     flex: 1 1 auto;
     padding: 0 1.25rem;
 
     .text {
-      font-size: $font-md;
-      line-height: $font-lh-md;
-      font-weight: 300;
+      font-size: $font-sm;
+      line-height: $font-lh-sm;
+      font-weight: 400;
     }
   }
 

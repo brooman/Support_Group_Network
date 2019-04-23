@@ -13,7 +13,7 @@ const Footer = props => {
             <div className="section" key={index}>
               <h3 className="title">{section.title}</h3>
                 {section.links.map((item, index) => {
-                  return <a key={index} className="link" href={item.link}>{item.text}</a>    
+                  return <a key={index} className="footer-link" href={item.link}>{item.text}</a>    
                 })}
             </div>
           )
