@@ -9,14 +9,14 @@
   }
 
   .container-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-gap: 2rem;
     background-color: $themeColor-White;
     padding: 1rem;
 
     @media screen and (max-width: $breakpoint){
-      grid-template-columns: 1fr;
+			// grid-template-columns: 1fr;
     }
   }
 }
