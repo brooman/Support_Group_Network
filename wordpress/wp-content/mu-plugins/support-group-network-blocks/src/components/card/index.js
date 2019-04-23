@@ -19,8 +19,8 @@ registerBlockType( 'cgb/card', {
 			selector: 'h3 > span',
 		},
 		content: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'text',
 			selector: '.text',
 		},
 		link: {

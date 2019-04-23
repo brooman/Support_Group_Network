@@ -23,11 +23,11 @@ registerBlockType( 'cgb/textbox', {
 			selector: 'h2.title > span',
 		},
 		content: {
-			type: 'array',
-			source: 'children',
+			type: 'string',
+			source: 'text',
 			selector: '.text',
 		},
-		backgroundColor: {
+		color: {
 			type: 'string',
 			default: 'yellow',
 		},
@@ -35,7 +35,7 @@ registerBlockType( 'cgb/textbox', {
 
 	edit( props ) {
 		const {
-			attributes: { title, content, backgroundColor },
+			attributes: { title, content, color },
 			className,
 			setAttributes,
 		} = props;
@@ -49,7 +49,7 @@ registerBlockType( 'cgb/textbox', {
 		};
 
 		// Get value from select > option
-		const onChangeColorOption = value => {
+		const onChangeColor = value => {
 			let colorClass;
 
 			if ( value === '#FFFB56' ) {
@@ -65,10 +65,10 @@ registerBlockType( 'cgb/textbox', {
 				colorClass = 'lightdark';
 			}
 
-			setAttributes( { backgroundColor: colorClass } );
+			setAttributes( { color: colorClass } );
 		};
 
-		const baseClassNames = [ className, backgroundColor ].join( ' ' );
+		const baseClassNames = [ className, color ].join( ' ' );
 
 		return [
 			<InspectorControls>
@@ -79,7 +79,7 @@ registerBlockType( 'cgb/textbox', {
 				<div id="cgb-block-textbox-inspector-control-wrapper">
 					<label className="blocks-base-control__label">Textbox Color</label>
 					<ColorPalette // Element Tag for Gutenberg standard colour selector
-						onChange={ onChangeColorOption } // onChange event callback
+						onChange={ onChangeColor } // onChange event callback
 					/>
 				</div>
 			</InspectorControls>,
