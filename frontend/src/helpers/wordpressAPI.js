@@ -1,25 +1,17 @@
-const getPageContent = (path) => {
-  let pageId = null;
-  let response = [];
+const getPageContent = async (path) => {
 
   //Fetch pageId with supplied slug or 'index' if none was provided
-  fetch(`http://localhost:8888/wp-json/wp/v2/pages?slug=${path ? path : 'index'}`)
+  let pageId = await fetch(`http://localhost:8080/wp-json/wp/v2/pages?slug=${path ? path.substr(1) : 'index'}`)
     .then(res => res.json())
     .then(data => {
-      if(data[0]) {
-        pageId = data[0].id;
-      }
+        return data[0].id;
     })
 
-  if(pageId) {
-    fetch(`http://localhost:8888/wp-json/gutes-db/v1/${pageId}`)
+    return await fetch(`http://localhost:8080/wp-json/gutes-db/v1/${pageId}`)
       .then(res => res.json())
       .then(data => {
-        response = data.data;
+        return data.data;
       })
-  }
-    
-  return response;
 }
 
 export default getPageContent;
