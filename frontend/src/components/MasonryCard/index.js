@@ -18,4 +18,4 @@ const MasonryCard = props => {
   );
 };
 
-export default MasonryCard;
+export default MasonryCard; 

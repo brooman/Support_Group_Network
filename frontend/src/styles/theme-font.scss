@@ -20,8 +20,8 @@ $font-lh-xl: 95px;
   line-height: $font-lh-xl;
   color: $themeColor-White;
   background-color: $themeColor-Dark;
-  padding: 0 3rem 0 1rem;
   text-align: center;
+  padding: 0 3rem 0 1rem;
 
   @media screen and (max-width: $breakpoint){
     font-size: $font-heading;
@@ -34,8 +34,8 @@ $font-lh-xl: 95px;
   line-height: $font-lh-heading;
   color: $themeColor-White;
   background-color: $themeColor-Dark;
-  padding: 0 3rem 0 1rem;
   text-align: center;
+  padding: 0 3rem 0 1rem;
 }
 
 .text-lg {

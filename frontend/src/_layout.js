@@ -133,7 +133,7 @@ class Layout extends Component {
       <>
         <HtmlHead/>
         <Header brand={header.brand} navitems={header.navitems}/>
-        <Hero />
+        <Hero title="Support Group Network" subtitle="Working togheter for a better future" />
         <Content>
           {children}
         </Content>
