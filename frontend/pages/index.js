@@ -36,9 +36,9 @@ class Index extends Component {
     content: []
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({
-      content: getPageContent(location.pathname)
+      content: await getPageContent(location.pathname)
     })
   }
 
@@ -46,11 +46,21 @@ class Index extends Component {
     let children = [];
 
     item.type = item.name.split('/')[1]
-    item.props = item.data.attributes
-    item.children = item.data.innerBlocks
 
+
+    item.props = item.data.attributes
+    /*item.props = Object.keys(item.data.attributes).filter((item) => {
+      if (typeof item === 'string') return true;
+
+      return false;
+    })*/
+
+    item.children = item.data.innerBlocks || null
+
+    
     if(item.children){
       item.children.map(child => {
+        console.log(child.data.attributes)
         children.push(this.createContent(child))
       })
     }
