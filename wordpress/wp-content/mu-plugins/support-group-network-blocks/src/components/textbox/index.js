@@ -10,13 +10,13 @@ const {
 	ColorPalette,
 } = wp.editor;
 
-const {
-	CheckboxControl,
-} = wp.components;
+// const {
+// 	CheckboxControl,
+// } = wp.components;
 
-const {
-	withState,
-} = wp.compose;
+// const {
+// 	withState,
+// } = wp.compose;
 
 registerBlockType( 'cgb/textbox', {
 
