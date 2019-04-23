@@ -12,6 +12,7 @@
 import './components/box_container';
 import './components/card';
 import './components/container';
+import './components/divider';
 import './components/hero';
 import './components/image';
 import './components/list';
