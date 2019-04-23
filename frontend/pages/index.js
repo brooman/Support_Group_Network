@@ -46,15 +46,7 @@ class Index extends Component {
     let children = [];
 
     item.type = item.name.split('/')[1]
-
-
     item.props = item.data.attributes
-    /*item.props = Object.keys(item.data.attributes).filter((item) => {
-      if (typeof item === 'string') return true;
-
-      return false;
-    })*/
-
     item.children = item.data.innerBlocks || null
 
     
@@ -69,19 +61,19 @@ class Index extends Component {
   }
 
   render() {
-    if(this.state.content) {
+    if(this.state.content.length > 0) {
       return (
         <Layout>
-        {this.state.content.map(item => {
-          return this.createContent(item)
-        })}
-      </Layout>
-    );
-  }
+          {this.state.content.map(item => {
+            return this.createContent(item)
+          })}
+        </Layout>
+      );
+    }
 
-  return (
-    <div>404 Page not found</div>
-  )
+    return (
+      <div>404 Page not found</div>
+    )
   }
 }
 
