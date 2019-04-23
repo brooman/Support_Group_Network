@@ -10,7 +10,7 @@ registerBlockType( 'cgb/supporter', {
 
 	title: __( 'Supporter' ),
 	icon: 'shield',
-	category: 'sgn-blocks',
+	category: 'child',
 
 	attributes: {
 		image: {

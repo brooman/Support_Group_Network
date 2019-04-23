@@ -22,7 +22,7 @@ registerBlockType( 'cgb/textbox', {
 
 	title: __( 'Colored Textbox' ),
 	icon: 'shield',
-	category: 'sgn-blocks',
+	category: 'child',
 
 	attributes: {
 		title: {
