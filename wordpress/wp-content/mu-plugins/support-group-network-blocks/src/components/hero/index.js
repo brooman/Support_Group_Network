@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 const { __ } = wp.i18n;
@@ -21,12 +22,12 @@ registerBlockType( 'cgb/hero', {
 		title: {
 			type: 'string',
 			selector: 'h1 span',
-			default: 'title',
+			default: 'Title',
 		},
 		subtitle: {
 			type: 'string',
 			selector: 'h2 span',
-			default: 'subtitle',
+			default: 'Subtitle',
 		},
 	},
 
@@ -58,45 +59,42 @@ registerBlockType( 'cgb/hero', {
 		return [
 			<InspectorControls>
 				<div>
-					<label htmlFor="title">Change Title</label>
-					<RichText
-						id="title"
-						tagName="span"
-						format="string"
-						onChange={ onChangeTitle }
-						value={ title }
-						placeholder="Enter descriptive text for image"
+					<MediaUpload
+						onSelect={ selectImage }
+						render={ ( { open } ) => {
+							return (
+								<button onClick={ open }>Change hero Image</button>
+							);
+						} }
 					/>
-				</div>
-				<div>
-					<label htmlFor="subtitle">Change Subtitle</label>
-					<RichText
-						id="subtitle"
-						tagName="span"
-						format="string"
-						onChange={ onChangeSubtitle }
-						value={ subtitle }
-						placeholder="Enter descriptive text for image"
-					/>
-
 				</div>
 			</InspectorControls>,
-			<div className={ className }>
-				<MediaUpload
-					onSelect={ selectImage }
-					render={ ( { open } ) => {
-						return (
-							<img src={ image } alt="Hero" />
-						);
-					} }
-				/>
-				<div className="text">
-					<h1>
-						<span className="hero-text">{ title }</span>
-					</h1>
-					<h2>
-						<span className="text-lg yellow">{ subtitle }</span>
-					</h2>
+			<div>
+				<div className={ className } style={ { backgroundImage: `url(${ image })` } }>
+					<div className="text">
+						<h1>
+							<RichText
+								id="title"
+								tagName="span"
+								format="string"
+								onChange={ onChangeTitle }
+								value={ title }
+								className="hero-text"
+								placeholder="Enter title"
+							/>
+						</h1>
+						<h2>
+							<RichText
+								id="subtitle"
+								tagName="span"
+								format="string"
+								onChange={ onChangeSubtitle }
+								value={ subtitle }
+								className="text-lg yellow"
+								placeholder="Enter subtitle"
+							/>
+						</h2>
+					</div>
 				</div>
 			</div>,
 		];
@@ -112,14 +110,7 @@ registerBlockType( 'cgb/hero', {
 		} = props;
 
 		return (
-			<div>
-				<div className="hero" style={ { backgroundImage: `url(${ image })` } }>
-					<div className="text">
-						<h1><span className="hero-text">{ title }</span></h1>
-						<h2><span className="text-lg yellow">{ subtitle }</span></h2>
-					</div>
-				</div>
-			</div>
+			<div></div>
 		);
 	},
 } );
