@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/jsx-key */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -23,10 +24,15 @@ registerBlockType( 'cgb/card', {
 			source: 'text',
 			selector: '.text',
 		},
-		link: {
+		linkUrl: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
+			selector: 'a.link',
+		},
+		linkText: {
+			type: 'string',
+			source: 'text',
 			selector: 'a.link',
 		},
 	},
@@ -37,7 +43,8 @@ registerBlockType( 'cgb/card', {
 				image,
 				title,
 				content,
-				link,
+				linkUrl,
+				linkText,
 			},
 			className,
 			setAttributes,
@@ -51,8 +58,12 @@ registerBlockType( 'cgb/card', {
 			setAttributes( { title } );
 		};
 
-		const onChangeUrl = link => {
-			setAttributes( { link } );
+		const onChangeLinkUrl = linkUrl => {
+			setAttributes( { linkUrl } );
+		};
+
+		const onChangeLinkText = linkText => {
+			setAttributes( { linkText } );
 		};
 
 		const selectImage = ( value ) => {
@@ -65,16 +76,25 @@ registerBlockType( 'cgb/card', {
 		const titleClassNames = [ 'text-lg', 'lightdark' ].join( ' ' );
 		const contentClassNames = [ 'text' ].join( ' ' );
 
-		{/* <Image src={image} size="3x4"/> */}
-
 		return [
 			<InspectorControls>
-				<label className="blocks-base-control__label" htmlFor="url_id_1">URL</label>
+
+				<label className="blocks-base-control__label" htmlFor="url_id_1">Link text</label>
+				<RichText
+					id="url_text_1"
+					tagName="a"
+					href={ linkUrl }
+					value={ linkText }
+					onChange={ onChangeLinkText }
+					className="link"
+				/>
+
+				<label className="blocks-base-control__label" htmlFor="url_id_1">Link url</label>
 				<RichText
 					id="url_id_1"
 					format="string"
-					onChange={ onChangeUrl }
-					value={ link }
+					onChange={ onChangeLinkUrl }
+					value={ linkUrl }
 					placeholder="Enter FULL URL here"
 				/>
 			</InspectorControls>,
@@ -83,6 +103,7 @@ registerBlockType( 'cgb/card', {
 				<MediaUpload
 					onSelect={ selectImage }
 					render={ ( { open } ) => {
+						// eslint-disable-next-line jsx-a11y/click-events-have-key-events
 						return <div
 							className={ imageClassNames }
 							style={ {
@@ -108,7 +129,7 @@ registerBlockType( 'cgb/card', {
 						className={ contentClassNames }
 					/>
 				</div>
-				<a className="link" href={ link }>Learn more...</a>
+				<a className="link" href={ linkUrl }>{ linkText }</a>
 			</div>,
 		];
 	},
@@ -119,7 +140,8 @@ registerBlockType( 'cgb/card', {
 				image,
 				title,
 				content,
-				link,
+				linkUrl,
+				linkText,
 			},
 		} = props;
 
@@ -140,7 +162,7 @@ registerBlockType( 'cgb/card', {
 					<p className="text">{ content }</p>
 				</div>
 
-				<a className="link" href={ link }>Learn more...</a>
+				<a className="link" href={ linkUrl }>{ linkText }</a>
 			</div>
 		);
 	},

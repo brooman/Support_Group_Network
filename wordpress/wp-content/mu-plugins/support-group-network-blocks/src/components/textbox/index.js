@@ -39,8 +39,15 @@ registerBlockType( 'cgb/textbox', {
 			type: 'string',
 			default: 'yellow',
 		},
-		link: {
+		linkUrl: {
 			type: 'string',
+			source: 'attribute',
+			attribute: 'href',
+			selector: 'a.link',
+		},
+		linkText: {
+			type: 'string',
+			source: 'text',
 			selector: 'a.link',
 			default: '',
 		},
@@ -56,7 +63,8 @@ registerBlockType( 'cgb/textbox', {
 				title,
 				content,
 				color,
-				link,
+				linkUrl,
+				linkText,
 				// wide,
 			},
 			className,
@@ -83,8 +91,12 @@ registerBlockType( 'cgb/textbox', {
 			setAttributes( { title } );
 		};
 
-		const onChangeLink = link => {
-			setAttributes( { link } );
+		const onChangeLinkUrl = linkUrl => {
+			setAttributes( { linkUrl } );
+		};
+
+		const onChangeLinkText = linkText => {
+			setAttributes( { linkText } );
 		};
 
 		// Get value from select > option
@@ -126,13 +138,24 @@ registerBlockType( 'cgb/textbox', {
 				</div>
 
 				<div id="cgb-block-textbox-inspector-control-wrapper-2">
-					<label className="blocks-base-control__label" htmlFor="name_id_1">Link related to card (optional)</label>
+					<label className="blocks-base-control__label" htmlFor="name_id_1">Text related to card link (optional)</label>
 					<RichText
 						id="name_id_1"
 						format="string"
-						onChange={ onChangeLink }
-						value={ link }
-						placeholder="Enter descriptive text for image"
+						onChange={ onChangeLinkText }
+						value={ linkText }
+						placeholder="Enter text for card link"
+					/>
+				</div>
+
+				<div id="cgb-block-textbox-inspector-control-wrapper-3">
+					<label className="blocks-base-control__label" htmlFor="name_id_2">Link related to card (optional)</label>
+					<RichText
+						id="name_id_2"
+						format="string"
+						onChange={ onChangeLinkUrl }
+						value={ linkUrl }
+						placeholder="Enter url for card link"
 					/>
 				</div>
 
@@ -159,8 +182,8 @@ registerBlockType( 'cgb/textbox', {
 					onChange={ onChangeContent }
 				/>
 
-				{ ( link !== '' ? (
-					<a className="link" href={ link }>Learn more...</a>
+				{ ( ( linkUrl !== '' && linkText !== '' ) ? (
+					<a className="link" href={ linkUrl }>{ linkText }</a>
 				) : null ) }
 			</div>,
 		];
