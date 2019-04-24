@@ -27,6 +27,7 @@ import { CGBBoxContainer } from './cgb-boxcontainer';
 import { CGBContainer } from './cgb-container';
 import { CGBSupportersContainer } from './cgb-supporterscontainer';
 import { CGBList } from './cgb-list';
+import { CGBHero } from './cgb-hero';
 
 export class SaveFilters {
   constructor() {
@@ -59,5 +60,6 @@ export class SaveFilters {
     new CGBContainer();
     new CGBSupportersContainer();
     new CGBList();
+    new CGBHero();
   }
 }
