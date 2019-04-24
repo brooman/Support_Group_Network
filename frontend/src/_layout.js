@@ -35,27 +35,27 @@ class Layout extends Component {
       navitems: [
         {
           'name': 'Who we are',
-          'link': '/',
+          'link': '/who-we-are',
         },
         {
           'name': 'What we do',
-          'link': '/',
+          'link': '/what-we-do',
         },
         {
           'name': 'Where we are',
-          'link': '/',
+          'link': '/where-we-are',
         },
         {
           'name': 'Job applications',
-          'link': '/',
+          'link': '/job-applications',
         },
         {
           'name': 'Get involved',
-          'link': '/',
+          'link': '/get-involved',
         },
         {
           'name': 'Donate',
-          'link': '/',
+          'link': '/donate',
         }
       ]
     },
