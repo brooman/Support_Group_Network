@@ -110,7 +110,18 @@ registerBlockType( 'cgb/hero', {
 		} = props;
 
 		return (
-			<div></div>
+			<div>
+				<div style={ { backgroundImage: `url(${ image })` } }>
+					<div className="text">
+						<h1>
+							<span className="hero-text">{ title }</span>
+						</h1>
+						<h2>
+							<span className="text-lg yellow">{ subtitle }</span>
+						</h2>
+					</div>
+				</div>
+			</div>
 		);
 	},
 } );
