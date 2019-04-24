@@ -46,10 +46,21 @@ class Index extends Component {
     let children = [];
 
     item.type = item.name.split('/')[1]
-    item.props = item.data.attributes
-    item.children = item.data.innerBlocks || null
+		item.props = item.data.attributes
+		
+    if(item.data.innerBlocks) {
 
-    
+			item.children = item.data.innerBlocks
+
+		} else if(item.innerBlocks) {
+
+			item.children = item.innerBlocks
+
+		} else {
+
+			item.children = null
+		}
+
     if(item.children){
       item.children.map(child => {
         console.log(child.data.attributes)
