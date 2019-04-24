@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const List = props => {
-  const { title, items, wide } = props
+  const { children, title, wide } = props
   
   const isWide = wide ? 'wide' : '';
 
@@ -10,7 +10,7 @@ const List = props => {
     <div className={`list ${isWide}`}>
       <h3>{title}</h3>
       <ul>
-        { items.map((item, index) => {
+        { React.Children.map(children, (item, index) => {
           return <li className="list-item" key={index}>{item}</li>
         })}
       </ul>
