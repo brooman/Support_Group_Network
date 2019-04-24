@@ -6,7 +6,7 @@ const { RichText } = wp.editor;
 registerBlockType( 'cgb/divider', {
 	title: __( 'Divider' ),
 	icon: 'shield',
-	category: 'children',
+	category: 'child',
 
 	attributes: {
 		title: {

@@ -30,14 +30,9 @@ registerBlockType( 'cgb/container', {
 			setAttributes,
 		} = props;
 
-		const wide = false;
-		const isWide = wide ? 'wide' : '';
-
 		const onChangeTitle = ( title ) => {
 			setAttributes( { title } );
 		};
-
-		const classNames = [ className, isWide ].join( ' ' );
 
 		return [
 			<InspectorControls>
@@ -50,11 +45,11 @@ registerBlockType( 'cgb/container', {
 					placeholder="Enter a title for the container"
 				/>
 			</InspectorControls>,
-			<div className={ classNames }>
+			<div className={ className }>
 				{ ( title !== '' ) ? (
 					<h2 className="container-title">
 						<span className="text-lg lightdark">{ title }</span>
-					</h2> ) : null }
+					</h2> ) : '' }
 				<div className="container-content">
 					<InnerBlocks />
 				</div>
@@ -71,10 +66,9 @@ registerBlockType( 'cgb/container', {
 
 		return (
 			<div>
-				{ ( title !== '' ) ? (
-					<h2 className="container-title">
-						<span className="text-lg lightdark">{ title }</span>
-					</h2> ) : null }
+				<h2 className="container-title">
+					<span className="text-lg lightdark">{ title }</span>
+				</h2>
 				<div className="container-content">
 					<InnerBlocks.Content />
 				</div>
