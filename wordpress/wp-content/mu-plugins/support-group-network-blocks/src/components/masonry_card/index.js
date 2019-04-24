@@ -21,11 +21,17 @@ registerBlockType( 'cgb/masonrycard', {
 			source: 'text',
 			selector: '.text',
 		},
-		link: {
+		linkUrl: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
 			selector: 'a.link',
+		},
+		linkText: {
+			type: 'string',
+			source: 'text',
+			selector: 'a.link',
+			default: 'Learn more...',
 		},
 	},
 
@@ -34,27 +40,42 @@ registerBlockType( 'cgb/masonrycard', {
 			attributes: {
 				title,
 				content,
-				link,
+				linkUrl,
+				linkText,
 			},
 			className,
 			setAttributes,
 		} = props;
 
-		const onChangeLink = link => {
-			setAttributes( { link } );
+		const onChangeLinkUrl = linkUrl => {
+			setAttributes( { linkUrl } );
+		};
+
+		const onChangeLinkText = linkText => {
+			setAttributes( { linkText } );
 		};
 
 		return [
 			<InspectorControls>
+				<div id="cgb-block-textbox-inspector-control-wrapper-2">
+					<label className="blocks-base-control__label" htmlFor="name_id_1">Text related to card link (optional)</label>
+					<RichText
+						id="name_id_1"
+						format="string"
+						onChange={ onChangeLinkText }
+						value={ linkText }
+						placeholder="Enter text for card link"
+					/>
+				</div>
 
 				<div id="cgb-block-textbox-inspector-control-wrapper-2">
 					<label className="blocks-base-control__label" htmlFor="name_id_1">Link related to card (optional)</label>
 					<RichText
 						id="name_id_1"
 						format="string"
-						onChange={ onChangeLink }
-						value={ link }
-						placeholder="Enter descriptive text for image"
+						onChange={ onChangeLinkUrl }
+						value={ linkUrl }
+						placeholder="Enter link for card"
 					/>
 				</div>
 			</InspectorControls>,
@@ -74,8 +95,8 @@ registerBlockType( 'cgb/masonrycard', {
 					<p className="text">{ content }</p>
 				</div>
 
-				{ ( link !== '' ? (
-					<a className="link" href={ link }>Learn more...</a>
+				{ ( ( linkUrl !== '' && linkText !== '' ) ? (
+					<a className="link" href={ linkUrl }>{ linkText }</a>
 				) : null ) }
 			</div>,
 		];
@@ -86,7 +107,8 @@ registerBlockType( 'cgb/masonrycard', {
 			attributes: {
 				title,
 				content,
-				link,
+				linkUrl,
+				linkText,
 			},
 		} = props;
 
@@ -100,9 +122,7 @@ registerBlockType( 'cgb/masonrycard', {
 					<p className="text">{ content }</p>
 				</div>
 
-				{ ( link !== '' ? (
-					<a className="link" href={ link }>Learn more...</a>
-				) : null ) }
+				<a className="link" href={ linkUrl }>{ linkText }</a>
 			</div>
 		);
 	},
