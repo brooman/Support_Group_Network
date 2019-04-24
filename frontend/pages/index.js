@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Error from 'next/error';
 import Layout from '../src/_layout'
+import Hero from '../src/components/Hero'
 import Container from '../src/components/Container';
 import Card from '../src/components/Card'
 import BoxContainer from '../src/components/BoxContainer';
@@ -21,6 +22,7 @@ class Index extends Component {
      * Load components into layout
      * this.<componentName> must be lowercase
      */
+    this.hero = Hero;
     this.container = Container;
     this.card = Card;
     this.boxcontainer = BoxContainer;
