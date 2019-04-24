@@ -7,7 +7,7 @@ const Card = props => {
 
   return (
     <div className="card">
-      <Image src={image} size="3x4"/>
+      <Image image={image} size="3x4"/>
       <h3><span className="text-lg lightdark">{title}</span></h3>
       <div className="card-content">
         <p className="text">{content}</p>
