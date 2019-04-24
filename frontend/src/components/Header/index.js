@@ -25,9 +25,9 @@ class Header extends React.Component {
     return (
       <>
         <header className="header">
-          <div className="brand" href="/">
+          <a className="brand" href="/">
             <img className="brandlogo" src={brand.logo} alt={brand.name}/>
-          </div>
+          </a>
 
           <div className={navClasses}>
             <nav className="navitems">

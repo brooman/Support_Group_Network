@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Error from 'next/error';
 import Layout from '../src/_layout'
 import Hero from '../src/components/Hero'
 import Container from '../src/components/Container';
@@ -48,7 +49,7 @@ class Index extends Component {
     let children = [];
 
     item.type = item.name.split('/')[1]
-		item.props = item.data.attributes
+    item.props = item.data.attributes || item.data
 		
     if(item.data.innerBlocks) {
 
@@ -74,7 +75,7 @@ class Index extends Component {
   }
 
   render() {
-    if(this.state.content.length > 0) {
+    if(this.state.content) {
       return (
         <Layout>
           {this.state.content.map(item => {
@@ -85,8 +86,8 @@ class Index extends Component {
     }
 
     return (
-      <div>404 Page not found</div>
-    )
+        <Error statusCode="404"/>
+    );
   }
 }
 
