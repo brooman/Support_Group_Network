@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MasonryCard = props => {
-  const { children, title, content, link_url, link_text } = props;
+  const { children, title, content, linkUrl, linkText } = props;
 
   return (
     <div className="card wide">
@@ -13,7 +13,7 @@ const MasonryCard = props => {
       <div className="card-content">
         <p className="text">{content}</p>
       </div>
-      {link_url && <a className="link" href={link_url}>{link_text}</a>}
+      {linkUrl && <a className="link" href={linkUrl}>{linkText}</a>}
     </div>
   );
 };
