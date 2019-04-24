@@ -6,6 +6,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  margin-left: -10vw;
+
+  @media screen and (max-width: $breakpoint){
+    margin-left: -5vw;
+  }
+
   .text {
     display: flex;
     flex-direction: column;
