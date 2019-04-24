@@ -47,7 +47,7 @@ class Index extends Component {
     let children = [];
 
     item.type = item.name.split('/')[1]
-		item.props = item.data.attributes
+    item.props = item.data.attributes || item.data
 		
     if(item.data.innerBlocks) {
 
