@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Error from 'next/error';
 import Layout from '../src/_layout'
 import Container from '../src/components/Container';
 import Card from '../src/components/Card'
@@ -72,7 +73,7 @@ class Index extends Component {
   }
 
   render() {
-    if(this.state.content.length > 0) {
+    if(this.state.content) {
       return (
         <Layout>
           {this.state.content.map(item => {
@@ -83,8 +84,8 @@ class Index extends Component {
     }
 
     return (
-      <div>404 Page not found</div>
-    )
+        <Error statusCode="404"/>
+    );
   }
 }
 
